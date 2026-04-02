@@ -80,12 +80,7 @@ const toggleMute = () => {
 
 const onCampaign = () => {
   if (loadingProgress.value < 100) return
-  router.push({ name: 'deck' })
-}
-
-const onPracticeClick = () => {
-  if (loadingProgress.value < 100) return
-  router.push({ name: 'deck' })
+  router.push({ name: 'match' })
 }
 
 const handleExit = () => {

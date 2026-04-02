@@ -34,7 +34,7 @@ export const useMusic = () => {
   }
 
   watch(() => route, () => {
-    if (bgMusic.value && bgMusic.value?.dataset?.name !== undefined && route.name === 'match') {
+    if (bgMusic.value && bgMusic.value?.dataset?.name !== undefined && route.name === 'battle') {
       bgMusic.value?.pause()
       const filename = 'battle.ogg'
       bgMusic.value.dataset.name = filename
@@ -43,7 +43,7 @@ export const useMusic = () => {
         isLoaded.value = true
         playWithFade()
       }, { once: true })
-    } else if (bgMusic.value && bgMusic.value?.dataset?.name === 'battle.ogg' && route.name !== 'match') {
+    } else if (bgMusic.value && bgMusic.value?.dataset?.name === 'battle.ogg' && route.name !== 'battle') {
       bgMusic.value?.pause()
       const filename = 'adventure_main-menu.mp3'
       bgMusic.value.dataset.name = filename

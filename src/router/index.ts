@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import MainMenu from '@/views/MainMenu'
 import CardSelectionView from '@/views/CardSelectionView'
-import GameField from '@/views/GameField'
+import BattleField from '@/views/BattleField.vue'
 import CampaignMap from '@/views/CampaignMap'
 import useUser, { isWeb } from '@/use/useUser'
 
@@ -9,7 +9,7 @@ const routes = [
   { path: '/', name: 'main-menu', component: MainMenu },
   { path: '/deck', name: 'deck', component: CardSelectionView },
   { path: '/campaign', name: 'campaign', component: CampaignMap },
-  { path: '/match', name: 'match', component: GameField }
+  { path: '/battle', name: 'battle', component: BattleField }
 ]
 
 const router = createRouter({
