@@ -1,0 +1,6 @@
+{
+  "name": "Small RPG",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/"
+}
