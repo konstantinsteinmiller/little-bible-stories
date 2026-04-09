@@ -1,8 +1,8 @@
 <script setup lang="ts">
-
 export interface TabOption {
   label: string
   value: string | number
+  icon?: string
 }
 
 interface Props {
@@ -19,37 +19,38 @@ const selectTab = (value: string | number) => {
 </script>
 
 <template lang="pug">
-  div(class="flex items-end justify-center gap-0 px-4")
+  div(class="f-tabs relative flex items-center gap-5 md:gap-7 border-b border-white/10")
     button(
       v-for="tab in options"
       :key="tab.value"
+      type="button"
       @click="selectTab(tab.value)"
       :class="[\
-        'relative group transition-all duration-150 active:scale-90',\
-        modelValue === tab.value ? 'z-10 -translate-y-1' : 'z-0 opacity-80 hover:opacity-100'\
+        'f-tab relative cursor-pointer select-none touch-manipulation pb-3 pt-2 transition-colors duration-150 ease-out',\
+        modelValue === tab.value ? 'is-active text-white' : 'is-inactive text-white/45 hover:text-white/75'\
       ]"
     )
-      //- Shadow/Bottom Border
-      div(
-        class="absolute inset-0 translate-y-1 rounded-t-xl sm:rounded-t-2xl bg-[#0f1a30]"
+      span(class="inline-flex items-center gap-2")
+        img(
+          v-if="tab.icon"
+          :src="tab.icon"
+          :alt="tab.label"
+          class="w-5 h-5 object-contain"
+        )
+        span(class="text-sm md:text-base font-semibold tracking-wide") {{ tab.label }}
+      //- underline indicator for active tab
+      span(
+        v-if="modelValue === tab.value"
+        class="f-tab-underline absolute left-0 right-0 -bottom-px h-[2px] rounded-full bg-white"
       )
-
-      //- Tab Body
-      div(
-        :class="[\
-          'relative px-4 py-2 sm:px-8 sm:py-3 border-x-4 border-t-4 border-[#0f1a30] rounded-t-xl sm:rounded-t-2xl font-black uppercase italic tracking-wider transition-colors',\
-          tab.icon ? 'cursor-pointer': '', \
-            modelValue === tab.value \
-            ? 'bg-gradient-to-b from-[#ffcd00] to-[#f7a000] text-white shadow-[inset_0_4px_0_rgba(255,255,255,0.4)]'\
-            : 'bg-[#2a4372] opacity-80 text-[#8fa7d1] hover:bg-[#34538d]'\
-        ]"
-      )
-        div.w-8.h-8.object-fill(v-if="tab.icon")
-          img.object-fill(:src="tab.icon" class="")
-        span(v-else class="brawl-text text-sm sm:text-lg") {{ tab.label }}
 </template>
 
 <style lang="sass" scoped>
-.brawl-text
-  text-shadow: 2px 2px 0 #000
+button
+  -webkit-tap-highlight-color: transparent
+  background: transparent
+  border: none
+
+.f-tab-underline
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5)
 </style>

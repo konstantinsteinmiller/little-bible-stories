@@ -7,12 +7,10 @@ html, body
   -ms-touch-action: manipulation
   margin: 0
   padding: 0
-  overflow: hidden
-  /* Prevents "rubber-banding" scroll effects */
-  position: fixed
-  /* Extra insurance against the layout moving */
   width: 100%
-  height: 100%
+  min-height: 100%
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
 
 #app
   height: 100%
@@ -44,3 +42,52 @@ html, body
   50%
     background-color: #f7a000 !important
     opacity: 0.7
+
+
+// --- Brand Colors ---
+$color-brand-primary: #3498DB
+// Vibrant Sky Blue (Backgrounds)
+$color-brand-secondary: #F1C40F
+// Sunlight Yellow (High-priority buttons/Coins)
+$color-brand-accent: #E67E22
+// Warm Orange (Buttons/Highlights)
+
+// --- Math Operation Palette (Category-based) ---
+$color-math-addition: #2ECC71
+// Vibrant Green
+$color-math-subtraction: #E74C3C
+// Coral Red
+$color-math-multi: #27AE60
+// Deeper Lime Green
+$color-math-division: #A2D149
+// Yellow-Green
+
+// --- Advanced Module Palette ---
+$color-mod-purple: #9B59B6
+// Amethyst Purple (Mixed Operations)
+$color-mod-teal: #1ABC9C
+// Turquoise (Fractions/Multi-digit)
+$color-mod-navy: #34495E
+// Deep Blue (Navigation icons/Text)
+
+// --- Neutrals & UI Essentials ---
+$color-ui-white: #FFFFFF
+// Card backgrounds
+$color-ui-light-gray: #ECF0F1
+// Subtle borders/Dividers
+$color-ui-text-main: #2C3E50
+// Dark Navy (For readability)
+$color-ui-text-muted: #7F8C8D
+// Gray (Secondary info like Level 0)
+
+// --- Usage Example ---
+.btn-practice
+  background-color: $color-brand-secondary
+  color: $color-ui-text-main
+  border-radius: 12px
+  //box-shadow: 0 4px 0 darken($color-brand-secondary, 10%)
+// For that "toy" depth
+
+.card-addition
+  background-color: $color-ui-white
+  border-top: 5px solid $color-math-addition

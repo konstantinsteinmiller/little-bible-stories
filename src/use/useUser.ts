@@ -3,7 +3,7 @@ import type { Ref } from 'vue'
 import useUserDb from '@/use/useUserDb'
 import { type Difficulties, DIFFICULTY } from '@/utils/enums'
 import { mobileCheck } from '@/utils/function'
-import type { GameCard } from '@/types/game.ts'
+import type { GameCard } from '@/types/app.ts'
 import useModels from '@/use/useModels.ts'
 
 export const windowWidth = ref(window.innerWidth)
@@ -19,7 +19,6 @@ export const isMobilePortrait = computed(() =>
 )
 
 declare const APP_VERSION: string
-export const isCrazyWeb = import.meta.env.VITE_APP_CRAZY_WEB === 'true'
 export const isNative = import.meta.env.VITE_APP_NATIVE === 'true'
 export const isWeb = import.meta.env.VITE_APP_NATIVE !== 'true'
 export const isDemo = import.meta.env.VITE_APP_DEMO === 'true'

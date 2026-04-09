@@ -1,133 +1,153 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
 
 interface Option {
   value: string | number
   label: string
+  subLabel?: string
+  icon?: string
+  avatar?: string
 }
 
 interface Props {
   modelValue: string | number
   options: Option[]
-  placeholder?: string
   label?: string
-  maxHeight?: string
+  multiple?: boolean
+  accent?: 'purple' | 'gold'
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  placeholder: 'SELECT...',
-  maxHeight: '200px'
+  label: '',
+  multiple: false,
+  accent: 'purple'
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
-const isOpen = ref(false)
-const dropdownRef = ref<HTMLElement | null>(null)
+const accentClass = computed(() => (props.accent === 'gold' ? 'accent-gold' : 'accent-purple'))
 
-const selectedLabel = computed(() => {
-  const option = props.options.find(opt => opt.value === props.modelValue)
-  return option ? option.label : props.placeholder
-})
-
-const toggle = () => (isOpen.value = !isOpen.value)
-
-const selectOption = (value: string | number) => {
-  emit('update:modelValue', value)
-  isOpen.value = false
+function isSelected(option: Option) {
+  return props.modelValue === option.value
 }
 
-// Close when clicking outside
-const handleClickOutside = (event: MouseEvent) => {
-  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
-    isOpen.value = false
-  }
+function selectOption(option: Option) {
+  emit('update:modelValue', option.value)
+  emit('change', option)
 }
-
-onMounted(() => document.addEventListener('click', handleClickOutside))
-onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 </script>
 
 <template lang="pug">
-  div(class="relative w-full font-black" ref="dropdownRef")
-    //- Label (Optional)
-    div(v-if="label" class="label-text mb-1 ml-1 text-white uppercase italic text-lg tracking-wider") {{ label }}
+  div(:class="['f-select w-full', accentClass]")
+    //- Optional label
+    div(
+      v-if="label"
+      class="f-select-label mb-2 ml-1 text-xs md:text-sm font-bold uppercase tracking-wider text-white/60"
+    ) {{ label }}
 
-    //- The Trigger (Styled like FButton)
-    button(
-      type="button"
-      @click="toggle"
-      class="group relative w-full inline-block cursor-pointer select-none transition-all duration-75 active:scale-[0.98] hover:scale-[1.02] touch-manipulation focus:outline-none"
-    )
-      //- 3D Shadow
-      span(class="absolute inset-0 translate-y-[4px] rounded-2xl bg-[#1a2b4b]")
-
-      //- Main Button Body
-      span(class="relative flex items-center justify-between min-w-[140px] rounded-2xl border-[3px] border-[#0f1a30] px-4 py-3 bg-gradient-to-b from-[#ffcd00] to-[#f7a000]")
-        //- Inner Top Shine
-        span(class="absolute inset-x-0 top-0 h-1/2 rounded-t-xl bg-white/25")
-
-        //- Selected Text
-        span(class="text relative block text-sm md:text-lg tracking-wide text-white uppercase truncate mr-2") {{ selectedLabel }}
-
-        //- Arrow Icon
-        span(
-          class="relative transition-transform duration-200"
-          :class="{ 'rotate-180': isOpen }"
-        )
-          svg(width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]")
-            path(d="m6 9 6 6 6-6")
-
-    //- The Dropdown Menu
-    transition(name="pop")
-      div(
-        v-if="isOpen"
-        class="absolute z-50 left-0 right-0 mt-3 rounded-2xl border-[3px] border-[#0f1a30] bg-[#1a2b4b] shadow-2xl overflow-hidden"
+    //- Tile list
+    div(class="flex flex-col gap-2 md:gap-3")
+      button(
+        v-for="option in options"
+        :key="option.value"
+        type="button"
+        @click="selectOption(option)"
+        :class="[\
+          'f-select-tile group relative flex items-center w-full gap-3 md:gap-4 cursor-pointer select-none touch-manipulation rounded-2xl px-3 py-3 md:px-4 md:py-3 text-left transition-all duration-150 ease-out hover:scale-[101%] active:scale-[99%]',\
+          isSelected(option) ? 'is-active' : 'is-inactive'\
+        ]"
       )
-        //- Scrollable Area
-        div(
-          class="custom-scrollbar overflow-y-auto p-2"
-          :style="{ maxHeight: maxHeight }"
-        )
-          div(
-            v-for="option in options"
-            :key="option.value"
-            @click="selectOption(option.value)"
-            class="group/item relative mb-1 last:mb-0 cursor-pointer p-3 rounded-xl transition-all duration-75 active:scale-[0.97]"
-            :class="modelValue === option.value ? 'bg-[#50aaff]' : 'hover:bg-[#2266ff]'"
+        //- Left: avatar / icon
+        div(class="f-select-avatar relative shrink-0 inline-flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full overflow-hidden bg-[#2a1a4a] border border-white/10")
+          img(
+            v-if="option.avatar"
+            :src="option.avatar"
+            :alt="option.label"
+            class="absolute inset-0 w-full h-full object-cover"
           )
-            //- Option Shine (only for selected/hover)
-            span(class="absolute inset-x-0 top-0 h-1/2 rounded-t-xl bg-white/10")
+          span(
+            v-else-if="option.icon"
+            class="text-lg md:text-xl leading-none"
+          ) {{ option.icon }}
+          span(
+            v-else
+            class="text-sm font-bold text-white/70 uppercase"
+          ) {{ option.label.charAt(0) }}
 
-            span(class="text relative block text-white uppercase text-md tracking-wide") {{ option.label }}
+        //- Center: text block
+        div(class="flex-1 min-w-0 flex flex-col")
+          span(class="f-select-title text-sm md:text-base font-bold text-white truncate") {{ option.label }}
+          span(
+            v-if="option.subLabel"
+            class="f-select-sub mt-0.5 text-[11px] md:text-xs font-medium text-white/50 truncate"
+          ) {{ option.subLabel }}
+
+        //- Right: radio / checkbox indicator
+        div(
+          :class="[\
+            'f-select-indicator shrink-0 relative inline-flex items-center justify-center w-6 h-6 md:w-7 md:h-7 border-2 transition-all duration-150',\
+            multiple ? 'rounded-md' : 'rounded-full',\
+            isSelected(option) ? 'is-checked' : 'border-white/25'\
+          ]"
+        )
+          //- inner dot for radio
+          span(
+            v-if="!multiple && isSelected(option)"
+            class="block w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white"
+          )
+          //- check mark for checkbox
+          svg(
+            v-else-if="multiple && isSelected(option)"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4 text-white"
+          )
+            polyline(points="20 6 9 17 4 12")
 </template>
 
 <style scoped lang="sass">
-.text, .label-text
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+button
+  -webkit-tap-highlight-color: transparent
+  background: transparent
+  border: none
 
-/* Custom Scrollbar for that game feel */
-.custom-scrollbar
-  &::-webkit-scrollbar
-    width: 12px
+.f-select-tile
+  background-color: #1a0f33
+  border: 2px solid transparent
+  box-shadow: 0 4px 14px -6px rgba(0, 0, 0, 0.55)
 
-  &::-webkit-scrollbar-track
-    background: #0a1425
-    border-radius: 10px
-    margin: 8px
-
-  &::-webkit-scrollbar-thumb
-    background: #50aaff
-    border: 3px solid #0f1a30
-    border-radius: 10px
+  &.is-inactive
+    border-color: rgba(196, 168, 255, 0.10)
 
     &:hover
-      background: #2266ff
+      border-color: rgba(196, 168, 255, 0.22)
+      background-color: #211042
 
-/* Transition Animations */
-.pop-enter-active, .pop-leave-active
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.1s
+// ---------- Purple accent ----------
+.accent-purple
+  .f-select-tile.is-active
+    border-color: #8c5aff
+    background-color: #221442
+    box-shadow: 0 0 0 1px rgba(140, 90, 255, 0.35), 0 0 22px -2px rgba(140, 90, 255, 0.55), 0 0 44px -10px rgba(140, 90, 255, 0.45)
 
-.pop-enter-from, .pop-leave-to
-  opacity: 0
-  transform: translateY(-10px) scale(0.95)
+  .f-select-indicator.is-checked
+    border-color: #8c5aff
+    background-color: #8c5aff
+    box-shadow: 0 0 12px rgba(140, 90, 255, 0.7)
+
+// ---------- Gold accent ----------
+.accent-gold
+  .f-select-tile.is-active
+    border-color: #f7c948
+    background-color: #2a1a3a
+    box-shadow: 0 0 0 1px rgba(247, 201, 72, 0.4), 0 0 22px -2px rgba(247, 201, 72, 0.55), 0 0 44px -10px rgba(247, 201, 72, 0.4)
+
+  .f-select-indicator.is-checked
+    border-color: #f7c948
+    background-color: #f7c948
+    box-shadow: 0 0 12px rgba(247, 201, 72, 0.7)
 </style>

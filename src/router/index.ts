@@ -1,15 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import MainMenu from '@/views/MainMenu'
-import CardSelectionView from '@/views/CardSelectionView'
-import BattleField from '@/views/BattleField.vue'
-import CampaignMap from '@/views/CampaignMap'
+import ListView from '@/views/ListView.vue'
+import DesignSystemView from '@/views/DesignSystemView.vue'
 import useUser, { isWeb } from '@/use/useUser'
 
 const routes = [
-  { path: '/', name: 'main-menu', component: MainMenu },
-  { path: '/deck', name: 'deck', component: CardSelectionView },
-  { path: '/campaign', name: 'campaign', component: CampaignMap },
-  { path: '/battle', name: 'battle', component: BattleField }
+  { path: '/', name: 'main-menu', component: ListView },
+  { path: '/design-system', name: 'design-system', component: DesignSystemView }
 ]
 
 const router = createRouter({
@@ -29,8 +25,8 @@ router.beforeEach((to, from) => {
 
   // Only apply restrictions if it's the Web version
   if (isWeb) {
-    const isFullVersion = url.includes(remoteURL + '/small-rpg/') && !url.includes('/small-rpg/demo/') && !url.includes('/small-rpg/develop/')
-    const isDevelopVersion = url.includes(remoteURL + '/small-rpg/develop/')
+    const isFullVersion = url.includes(remoteURL + '/kanaan-stories/') && !url.includes('/kanaan-stories/demo/') && !url.includes('/kanaan-stories/develop/')
+    const isDevelopVersion = url.includes(remoteURL + '/kanaan-stories/develop/')
     const isDev = url.includes('localhost:5173/')
 
     if (isDev) {
@@ -39,7 +35,7 @@ router.beforeEach((to, from) => {
 
     // If user is on Full or Develop without the unlock param, boot them to Demo
     if ((isFullVersion || isDevelopVersion) && !isUnlocked) {
-      window.location.href = remoteURL + '/small-rpg/demo/'
+      window.location.href = remoteURL + '/kanaan-stories/demo/'
       return false// Stop execution
     } else if (isUnlocked && (isFullVersion || isDevelopVersion)) {
       localStorage.setItem('full_unlocked', 'true')

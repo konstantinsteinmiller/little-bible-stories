@@ -1,5 +1,5 @@
 import { ref, type Ref } from 'vue'
-import type { GameCard } from '@/types/game'
+import type { GameCard } from '@/types/app.ts'
 
 export const useInteraction = (
   playerHand: Ref<GameCard[]>,
