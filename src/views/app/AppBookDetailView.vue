@@ -507,13 +507,13 @@ watch(currentTime, (v, prev) => {
   if (mode.value !== 'listen' || !isPlaying.value) return
   if (Math.floor(v / 3) !== Math.floor(prev / 3)) savePlayback()
 })
-console.log('book.coverImage: ', book.value, book?.value?.coverImage)
 </script>
 
 <template lang="pug">
-  div(class="app-page min-h-screen w-full relative pb-32 pt-[max(env(safe-area-inset-top), 0rem)]")
+  div(class="app-page min-h-screen w-full relative pb-32 pt-[max(env(safe-area-inset-top),0rem)]")
     template(v-if="book")
       //- ===== Section 1: Hero image + back arrow =====
+      div.header
       div(class="hero relative w-full")
         div(class="hero-img relative w-full aspect-[16/9]")
           div(
@@ -797,4 +797,7 @@ console.log('book.coverImage: ', book.value, book?.value?.coverImage)
 
   .button-label
     font-size: 14px
+
+.header
+  background: linear-gradient(180deg, #4a1b91 0%, #3a1272 100%)
 </style>
