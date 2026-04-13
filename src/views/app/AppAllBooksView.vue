@@ -103,6 +103,37 @@ function tagsForBook(b: typeof BOOKS[number]) {
                 size="sm"
               )
 
+    section(class="section-wrap mt-8")
+      h2(class="releases-title text-xl md:text-2xl font-black mb-3") {{ t('app.allBooks.allStories') }}
+      div(class="grid grid-cols-2 gap-3")
+        ACard(
+          v-for="book in allBooks"
+          :key="`grid-${book.id}`"
+          layout="vertical"
+          :title="t(book.title)"
+          @click="openBook(book.id)"
+        )
+          template(#image)
+            div(class="relative w-full h-full")
+              div(
+                class="absolute inset-0"
+                :style="{ background: book.cover || 'linear-gradient(135deg,#9560f4,#7e3af2)' }"
+              )
+              img(
+                v-if="book.coverImage || book.previewImage"
+                :src="book.coverImage || book.previewImage"
+                :alt="t(book.title)"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              )
+              ABadge.new-badge(
+                v-if="isNew(book.releaseDate)"
+                variant="new"
+                position="top-left"
+                label="NEU"
+                size="sm"
+              )
+
     div(class="h-32")
     ABottomNav(:items="navItems" :model-value="activeNav" @update:model-value="onNav")
 </template>

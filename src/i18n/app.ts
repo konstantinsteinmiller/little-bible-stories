@@ -28,7 +28,14 @@ export default {
         pages: 'PAGES',
         save: 'Save',
         saved: 'Saved',
-        notFound: 'Story not found.'
+        notFound: 'Story not found.',
+        back: 'Back',
+        listen: 'Listen to story',
+        readMyself: 'Read myself',
+        download: 'Download',
+        nowListening: 'NOW LISTENING',
+        followAlong: 'FOLLOW ALONG',
+        noText: 'No text available.'
       },
       bookSeries: {
         title: 'Book series',
@@ -81,7 +88,14 @@ export default {
         pages: 'SEITEN',
         save: 'Merken',
         saved: 'Gemerkt',
-        notFound: 'Geschichte nicht gefunden.'
+        notFound: 'Geschichte nicht gefunden.',
+        back: 'Zurück',
+        listen: 'Geschichte anhören',
+        readMyself: 'Selber lesen',
+        download: 'Herunterladen',
+        nowListening: 'HÖRST GERADE',
+        followAlong: 'MITLESEN',
+        noText: 'Kein Text verfügbar.'
       },
       bookSeries: {
         title: 'Buchreihe',

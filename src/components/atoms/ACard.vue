@@ -8,6 +8,7 @@ interface Props {
   imageAlt?: string
   tags?: string[]
   isDisabled?: boolean
+  layout?: 'horizontal' | 'vertical'
 }
 
 withDefaults(defineProps<Props>(), {
@@ -16,7 +17,8 @@ withDefaults(defineProps<Props>(), {
   image: '',
   imageAlt: '',
   tags: () => [],
-  isDisabled: false
+  isDisabled: false,
+  layout: 'horizontal'
 })
 
 defineEmits(['click'])
@@ -42,11 +44,14 @@ const onPointerDown = (e: PointerEvent) => {
   div(
     @click="$emit('click')"
     @pointerdown="onPointerDown"
-    :class="{ 'opacity-50 grayscale pointer-events-none': isDisabled }"
-    class="a-card group relative flex w-full items-stretch overflow-hidden cursor-pointer select-none p-0"
+    :class="[{ 'opacity-50 grayscale pointer-events-none': isDisabled }, layout === 'vertical' ? 'a-card--vertical flex-col items-stretch' : 'items-stretch']"
+    class="a-card group relative flex w-full overflow-hidden cursor-pointer select-none p-0"
   )
-    //- LEFT: flush-embedded illustration, extends top-to-bottom
-    div(class="a-card-image relative self-stretch shrink-0 w-20 sm:w-28 md:w-32 overflow-hidden")
+    //- Illustration — embedded on the left (horizontal) or on top (vertical)
+    div(
+      :class="layout === 'vertical' ? 'w-full aspect-[4/3]' : 'self-stretch shrink-0 w-20 sm:w-28 md:w-32'"
+      class="a-card-image relative overflow-hidden"
+    )
       slot(name="image")
         img(
           v-if="image"
@@ -110,6 +115,17 @@ const onPointerDown = (e: PointerEvent) => {
 .a-card-image
   background: linear-gradient(160deg, #e9dcff 0%, #cdb2ff 60%, #a57cff 100%)
   box-shadow: inset -4px 0 10px rgba(61, 22, 118, 0.15)
+
+
+.a-card--vertical .a-card-image
+  box-shadow: inset 0 -4px 10px rgba(61, 22, 118, 0.15)
+
+.a-card--vertical .a-card-title
+  -webkit-line-clamp: 1
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  display: block
 
 .a-card-category
   color: #6929c4

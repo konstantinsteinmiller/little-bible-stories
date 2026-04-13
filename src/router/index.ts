@@ -1,15 +1,23 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import ListView from '@/views/ListView.vue'
-import DesignSystemView from '@/views/DesignSystemView.vue'
-import DesignSystemSView from '@/views/DesignSystemSView.vue'
-import DesignSystemAView from '@/views/DesignSystemAView.vue'
 import AppMainView from '@/views/app/AppMainView.vue'
-import AppAllBooksView from '@/views/app/AppAllBooksView.vue'
-import AppBookSeriesView from '@/views/app/AppBookSeriesView.vue'
-import AppBookDetailView from '@/views/app/AppBookDetailView.vue'
-import AppAwardsView from '@/views/app/AppAwardsView.vue'
-import AppProfileView from '@/views/app/AppProfileView.vue'
 import useUser, { isWeb } from '@/use/useUser'
+
+// Lazy-loaded design-system routes. These views pull in every A/S/F atom
+// for preview purposes, so we code-split them into their own chunks to
+// keep them out of the main app bundle. Vite names the chunks via the
+// magic comment so they're easy to identify in `vite build` output.
+const DesignSystemView = () => import(/* webpackChunkName: "design-system" */ '@/views/DesignSystemView.vue')
+const DesignSystemSView = () => import(/* webpackChunkName: "design-system-s" */ '@/views/DesignSystemSView.vue')
+const DesignSystemAView = () => import(/* webpackChunkName: "design-system-a" */ '@/views/DesignSystemAView.vue')
+
+// Lazy-load the secondary app routes as well — AppMainView stays eager
+// because it's the landing route.
+const AppAllBooksView = () => import('@/views/app/AppAllBooksView.vue')
+const AppBookSeriesView = () => import('@/views/app/AppBookSeriesView.vue')
+const AppBookDetailView = () => import('@/views/app/AppBookDetailView.vue')
+const AppAwardsView = () => import('@/views/app/AppAwardsView.vue')
+const AppProfileView = () => import('@/views/app/AppProfileView.vue')
 
 const routes = [
   { path: '/', name: 'main-menu', component: ListView, redirect: '/app' },

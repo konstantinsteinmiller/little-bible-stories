@@ -37,7 +37,10 @@ const onUp = () => (pressed.value = false)
     button(
       type="button"
       :class="[type === 'primary' ? 'a-btn-primary' : 'a-btn-secondary', { 'is-pressed': pressed }]"
-      class="group relative w-full inline-flex items-center justify-center gap-3 cursor-pointer select-none touch-manipulation px-7 md:px-9 py-4 md:py-5 min-w-[140px] md:min-w-[180px] transition-[transform,box-shadow,background-color] duration-100 ease-out hover:scale-[102%]"
+      class="a-button group relative w-full inline-flex items-center justify-center gap-1 cursor-pointer \
+             select-none touch-manipulation px-7 md:px-9 py-4 md:py-5 min-w-[140px]\
+             md:min-w-[180px] transition-[transform,box-shadow,background-color] duration-100 \
+             ease-out hover:scale-[102%]"
       :style="{ borderRadius: '32px' }"
       @click="$emit('click')"
       @pointerdown="onDown"
@@ -86,7 +89,7 @@ const onUp = () => (pressed.value = false)
           path(d="M16 4v16m0 0l-6-6m6 6l6-6" stroke="url(#dlGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
           path(d="M5 22v3a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3v-3" stroke="url(#dlGrad)" stroke-width="3" stroke-linecap="round")
 
-      span(class="relative block text-base md:text-lg tracking-wide")
+      span(class="button-label relative block text-base md:text-lg tracking-wide")
         slot {{ label }}
 </template>
 

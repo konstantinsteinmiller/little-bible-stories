@@ -1,0 +1,11 @@
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - electron
+  - electron-winstaller
+  - esbuild
+  - fibers
+  - protobufjs
+  - sharp
+onlyBuiltDependencies:
+  - ffmpeg-static
+  - onnxruntime-node

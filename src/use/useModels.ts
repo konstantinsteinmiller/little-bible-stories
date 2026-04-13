@@ -16,6 +16,13 @@ export interface BookAudio {
   de: string
 }
 
+export interface PlaybackState {
+  time?: number
+  page?: number
+  audioSrc?: string
+  updatedAt?: number
+}
+
 export interface Page {
   page: number
   title: string
@@ -27,6 +34,7 @@ export interface Book {
   title: string
   author: string
   releaseDate: string // ISO 8601
+  badges: string[]
   shortDescription: string
   description: string
   content: Page[]
@@ -52,7 +60,8 @@ export const BOOKS: Book[] = [
     id: 'fa-1-apple',
     title: 'fa-1.title',
     author: 'Anton Bernt',
-    releaseDate: '2024-03-12',
+    releaseDate: '2026-02-12',
+    badges: ['fa-1.badges.1', 'fa-1.badges.2'],
     shortDescription: 'Adam learns the cost of a single bite.',
     description: 'A retelling of the very first choice — and the very first lesson — set in a luminous garden where every fruit has a name and every name carries a story.',
     content: [...repeatPages(16, (item, i) => ({
@@ -62,7 +71,7 @@ export const BOOKS: Book[] = [
     } as Page))],
     audio: {
       en: 'https://cdn.example.com/kanaan/audio/en/apple-mission.mp3',
-      de: 'https://cdn.example.com/kanaan/audio/de/apple-mission.mp3'
+      de: 'audiobooks/fruit-agents/volume-1/de-fruit-agents-volume-1-page-1.ogg'
     },
     cover: 'linear-gradient(135deg, #E74C3C 0%, #F1C40F 100%)',
     coverImage: prependBaseUrl('images/fruit-agents/cover-fruit-agents_800x500.jpeg'),
@@ -168,6 +177,7 @@ export const BOOK_SERIES: BookSeries[] = [
 // ---------------------------------------------------------------------------
 const LS_WATCH_LIST = 'kanaan.watchList'
 const LS_LAST_READ = 'kanaan.lastReadId'
+const LS_PLAYBACK = 'kanaan.playback'
 
 function readJSON<T>(key: string, fallback: T): T {
   try {
@@ -181,6 +191,7 @@ function readJSON<T>(key: string, fallback: T): T {
 
 const watchListIds = ref<string[]>(readJSON<string[]>(LS_WATCH_LIST, []))
 const lastReadId = ref<string | null>(readJSON<string | null>(LS_LAST_READ, null))
+const playbackStates = ref<Record<string, PlaybackState>>(readJSON<Record<string, PlaybackState>>(LS_PLAYBACK, {}))
 
 function persistWatchList() {
   try {
@@ -192,6 +203,13 @@ function persistWatchList() {
 function persistLastRead() {
   try {
     localStorage.setItem(LS_LAST_READ, JSON.stringify(lastReadId.value))
+  } catch {
+  }
+}
+
+function persistPlayback() {
+  try {
+    localStorage.setItem(LS_PLAYBACK, JSON.stringify(playbackStates.value))
   } catch {
   }
 }
@@ -239,6 +257,23 @@ const useModels = () => {
     lastReadId.value ? getBook(lastReadId.value) ?? null : null
   )
 
+  // Playback state ------------------------------------------------------
+  const getPlaybackState = (bookId: string): PlaybackState | undefined =>
+    playbackStates.value[bookId]
+  const setPlaybackState = (bookId: string, state: PlaybackState) => {
+    playbackStates.value = {
+      ...playbackStates.value,
+      [bookId]: { ...playbackStates.value[bookId], ...state, updatedAt: Date.now() }
+    }
+    persistPlayback()
+  }
+  const clearPlaybackState = (bookId: string) => {
+    const next = { ...playbackStates.value }
+    delete next[bookId]
+    playbackStates.value = next
+    persistPlayback()
+  }
+
   // Stubs kept for `useUser.resetGameProgress` compatibility ------------
   const getStartCollection = () => []
   const saveCollection = (_collection: any) => {
@@ -263,6 +298,10 @@ const useModels = () => {
     lastReadId,
     lastReadBook,
     setLastRead,
+    // playback state
+    getPlaybackState,
+    setPlaybackState,
+    clearPlaybackState,
     // legacy stubs
     getStartCollection,
     saveCollection

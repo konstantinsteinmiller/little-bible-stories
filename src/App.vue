@@ -106,7 +106,7 @@ function isCrazyGamesUrl() {
 <template lang="pug">
   div(id="app-root").min-h-screen.w-screen.app-container.root-protection.game-ui-immune
     RouterView(v-slot="{ Component, route }")
-      transition(name="page-flip" mode="out-in" appear)
+      transition(name="page-playful" mode="out-in" appear)
         component(:is="Component" :key="route.fullPath")
 </template>
 

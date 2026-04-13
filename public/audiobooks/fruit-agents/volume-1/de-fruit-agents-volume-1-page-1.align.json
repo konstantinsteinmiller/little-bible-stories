@@ -1,0 +1,2228 @@
+{
+  "audio": "public/audiobooks/fruit-agents/volume-1/de-fruit-agents-volume-1-page-1.ogg",
+  "lang": "de",
+  "duration": 168.15,
+  "sentences": [
+    {
+      "text": "Die Sonne knallte an diesem Nachmittag so heiß auf die Rosenstraße, dass man hätte Spiegeleier auf der Straße braten können.",
+      "start": 0,
+      "end": 6.56,
+      "words": [
+        {
+          "text": "Die",
+          "start": 0,
+          "end": 0.18
+        },
+        {
+          "text": "Sonne",
+          "start": 0.18,
+          "end": 0.48
+        },
+        {
+          "text": "knallte",
+          "start": 0.48,
+          "end": 0.78
+        },
+        {
+          "text": "an",
+          "start": 0.78,
+          "end": 1.08
+        },
+        {
+          "text": "diesem",
+          "start": 1.08,
+          "end": 1.28
+        },
+        {
+          "text": "Nachmittag",
+          "start": 1.28,
+          "end": 1.86
+        },
+        {
+          "text": "so",
+          "start": 1.86,
+          "end": 2.08
+        },
+        {
+          "text": "heiß",
+          "start": 2.08,
+          "end": 2.3
+        },
+        {
+          "text": "auf",
+          "start": 2.3,
+          "end": 2.52
+        },
+        {
+          "text": "die",
+          "start": 2.52,
+          "end": 2.74
+        },
+        {
+          "text": "Rosenstraße,",
+          "start": 2.74,
+          "end": 3.64
+        },
+        {
+          "text": "dass",
+          "start": 3.64,
+          "end": 3.95
+        },
+        {
+          "text": "man",
+          "start": 3.95,
+          "end": 4.26
+        },
+        {
+          "text": "hätte",
+          "start": 4.26,
+          "end": 4.48
+        },
+        {
+          "text": "Spiegeleier",
+          "start": 4.48,
+          "end": 4.807
+        },
+        {
+          "text": "auf",
+          "start": 4.807,
+          "end": 5.133
+        },
+        {
+          "text": "der",
+          "start": 5.133,
+          "end": 5.46
+        },
+        {
+          "text": "Straße",
+          "start": 5.46,
+          "end": 5.78
+        },
+        {
+          "text": "braten",
+          "start": 5.78,
+          "end": 6.17
+        },
+        {
+          "text": "können.",
+          "start": 6.17,
+          "end": 6.56
+        }
+      ]
+    },
+    {
+      "text": "Leo fächelte sich mit seinem T-Shirt Luft zu und wischte sich den Schweiß von der Stirn.",
+      "start": 6.56,
+      "end": 12.803,
+      "words": [
+        {
+          "text": "Leo",
+          "start": 6.56,
+          "end": 6.95
+        },
+        {
+          "text": "fächelte",
+          "start": 6.95,
+          "end": 7.341
+        },
+        {
+          "text": "sich",
+          "start": 7.341,
+          "end": 7.731
+        },
+        {
+          "text": "mit",
+          "start": 7.731,
+          "end": 8.121
+        },
+        {
+          "text": "seinem",
+          "start": 8.121,
+          "end": 8.511
+        },
+        {
+          "text": "T-Shirt",
+          "start": 8.511,
+          "end": 8.901
+        },
+        {
+          "text": "Luft",
+          "start": 8.901,
+          "end": 9.291
+        },
+        {
+          "text": "zu",
+          "start": 9.291,
+          "end": 9.681
+        },
+        {
+          "text": "und",
+          "start": 9.681,
+          "end": 10.072
+        },
+        {
+          "text": "wischte",
+          "start": 10.072,
+          "end": 10.462
+        },
+        {
+          "text": "sich",
+          "start": 10.462,
+          "end": 10.852
+        },
+        {
+          "text": "den",
+          "start": 10.852,
+          "end": 11.242
+        },
+        {
+          "text": "Schweiß",
+          "start": 11.242,
+          "end": 11.632
+        },
+        {
+          "text": "von",
+          "start": 11.632,
+          "end": 12.022
+        },
+        {
+          "text": "der",
+          "start": 12.022,
+          "end": 12.413
+        },
+        {
+          "text": "Stirn.",
+          "start": 12.413,
+          "end": 12.803
+        }
+      ]
+    },
+    {
+      "text": "„Mir ist so heiß”, stöhnte er, „dass ich glaube, ich schmelze gleich wie ein Eis am Stiel.”",
+      "start": 12.803,
+      "end": 19.435,
+      "words": [
+        {
+          "text": "„Mir",
+          "start": 12.803,
+          "end": 13.193
+        },
+        {
+          "text": "ist",
+          "start": 13.193,
+          "end": 13.583
+        },
+        {
+          "text": "so",
+          "start": 13.583,
+          "end": 13.973
+        },
+        {
+          "text": "heiß”,",
+          "start": 13.973,
+          "end": 14.363
+        },
+        {
+          "text": "stöhnte",
+          "start": 14.363,
+          "end": 14.753
+        },
+        {
+          "text": "er,",
+          "start": 14.753,
+          "end": 15.144
+        },
+        {
+          "text": "„dass",
+          "start": 15.144,
+          "end": 15.534
+        },
+        {
+          "text": "ich",
+          "start": 15.534,
+          "end": 15.924
+        },
+        {
+          "text": "glaube,",
+          "start": 15.924,
+          "end": 16.314
+        },
+        {
+          "text": "ich",
+          "start": 16.314,
+          "end": 16.704
+        },
+        {
+          "text": "schmelze",
+          "start": 16.704,
+          "end": 17.094
+        },
+        {
+          "text": "gleich",
+          "start": 17.094,
+          "end": 17.484
+        },
+        {
+          "text": "wie",
+          "start": 17.484,
+          "end": 17.875
+        },
+        {
+          "text": "ein",
+          "start": 17.875,
+          "end": 18.265
+        },
+        {
+          "text": "Eis",
+          "start": 18.265,
+          "end": 18.655
+        },
+        {
+          "text": "am",
+          "start": 18.655,
+          "end": 19.045
+        },
+        {
+          "text": "Stiel.”",
+          "start": 19.045,
+          "end": 19.435
+        }
+      ]
+    },
+    {
+      "text": "Sam nickte und zog sein Baseballcap tiefer ins Gesicht, um sich vor der grellen Sonne zu schützen.",
+      "start": 19.435,
+      "end": 26.068,
+      "words": [
+        {
+          "text": "Sam",
+          "start": 19.435,
+          "end": 19.825
+        },
+        {
+          "text": "nickte",
+          "start": 19.825,
+          "end": 20.216
+        },
+        {
+          "text": "und",
+          "start": 20.216,
+          "end": 20.606
+        },
+        {
+          "text": "zog",
+          "start": 20.606,
+          "end": 20.996
+        },
+        {
+          "text": "sein",
+          "start": 20.996,
+          "end": 21.386
+        },
+        {
+          "text": "Baseballcap",
+          "start": 21.386,
+          "end": 21.776
+        },
+        {
+          "text": "tiefer",
+          "start": 21.776,
+          "end": 22.166
+        },
+        {
+          "text": "ins",
+          "start": 22.166,
+          "end": 22.556
+        },
+        {
+          "text": "Gesicht,",
+          "start": 22.556,
+          "end": 22.947
+        },
+        {
+          "text": "um",
+          "start": 22.947,
+          "end": 23.337
+        },
+        {
+          "text": "sich",
+          "start": 23.337,
+          "end": 23.727
+        },
+        {
+          "text": "vor",
+          "start": 23.727,
+          "end": 24.117
+        },
+        {
+          "text": "der",
+          "start": 24.117,
+          "end": 24.507
+        },
+        {
+          "text": "grellen",
+          "start": 24.507,
+          "end": 24.897
+        },
+        {
+          "text": "Sonne",
+          "start": 24.897,
+          "end": 25.287
+        },
+        {
+          "text": "zu",
+          "start": 25.287,
+          "end": 25.678
+        },
+        {
+          "text": "schützen.",
+          "start": 25.678,
+          "end": 26.068
+        }
+      ]
+    },
+    {
+      "text": "„Dann komm, wir gehen zu Milla in den Bauwagen.",
+      "start": 26.068,
+      "end": 29.579,
+      "words": [
+        {
+          "text": "„Dann",
+          "start": 26.068,
+          "end": 26.458
+        },
+        {
+          "text": "komm,",
+          "start": 26.458,
+          "end": 26.848
+        },
+        {
+          "text": "wir",
+          "start": 26.848,
+          "end": 27.238
+        },
+        {
+          "text": "gehen",
+          "start": 27.238,
+          "end": 27.628
+        },
+        {
+          "text": "zu",
+          "start": 27.628,
+          "end": 28.019
+        },
+        {
+          "text": "Milla",
+          "start": 28.019,
+          "end": 28.409
+        },
+        {
+          "text": "in",
+          "start": 28.409,
+          "end": 28.799
+        },
+        {
+          "text": "den",
+          "start": 28.799,
+          "end": 29.189
+        },
+        {
+          "text": "Bauwagen.",
+          "start": 29.189,
+          "end": 29.579
+        }
+      ]
+    },
+    {
+      "text": "Da ist es wenigstens schattig.”",
+      "start": 29.579,
+      "end": 31.53,
+      "words": [
+        {
+          "text": "Da",
+          "start": 29.579,
+          "end": 29.969
+        },
+        {
+          "text": "ist",
+          "start": 29.969,
+          "end": 30.359
+        },
+        {
+          "text": "es",
+          "start": 30.359,
+          "end": 30.75
+        },
+        {
+          "text": "wenigstens",
+          "start": 30.75,
+          "end": 31.14
+        },
+        {
+          "text": "schattig.”",
+          "start": 31.14,
+          "end": 31.53
+        }
+      ]
+    },
+    {
+      "text": "Die drei Freunde – Leo mit seinen zerzausten braunen Haaren, Sam mit dem roten Baseballcap und Milla mit ihrem langen blonden Zopf – waren unzertrennlich.",
+      "start": 31.53,
+      "end": 42.8,
+      "words": [
+        {
+          "text": "Die",
+          "start": 31.53,
+          "end": 31.92
+        },
+        {
+          "text": "drei",
+          "start": 31.92,
+          "end": 32.14
+        },
+        {
+          "text": "Freunde",
+          "start": 32.14,
+          "end": 32.6
+        },
+        {
+          "text": "–",
+          "start": 32.6,
+          "end": 32.993
+        },
+        {
+          "text": "Leo",
+          "start": 32.993,
+          "end": 33.387
+        },
+        {
+          "text": "mit",
+          "start": 33.387,
+          "end": 33.78
+        },
+        {
+          "text": "seinen",
+          "start": 33.78,
+          "end": 34.12
+        },
+        {
+          "text": "zerzausten",
+          "start": 34.12,
+          "end": 35
+        },
+        {
+          "text": "braunen",
+          "start": 35,
+          "end": 35.42
+        },
+        {
+          "text": "Haaren,",
+          "start": 35.42,
+          "end": 35.78
+        },
+        {
+          "text": "Sam",
+          "start": 35.78,
+          "end": 36.227
+        },
+        {
+          "text": "mit",
+          "start": 36.227,
+          "end": 36.673
+        },
+        {
+          "text": "dem",
+          "start": 36.673,
+          "end": 37.12
+        },
+        {
+          "text": "roten",
+          "start": 37.12,
+          "end": 37.54
+        },
+        {
+          "text": "Baseballcap",
+          "start": 37.54,
+          "end": 38.025
+        },
+        {
+          "text": "und",
+          "start": 38.025,
+          "end": 38.51
+        },
+        {
+          "text": "Milla",
+          "start": 38.51,
+          "end": 38.995
+        },
+        {
+          "text": "mit",
+          "start": 38.995,
+          "end": 39.48
+        },
+        {
+          "text": "ihrem",
+          "start": 39.48,
+          "end": 39.74
+        },
+        {
+          "text": "langen",
+          "start": 39.74,
+          "end": 40.14
+        },
+        {
+          "text": "blonden",
+          "start": 40.14,
+          "end": 40.54
+        },
+        {
+          "text": "Zopf",
+          "start": 40.54,
+          "end": 40.94
+        },
+        {
+          "text": "–",
+          "start": 40.94,
+          "end": 41.38
+        },
+        {
+          "text": "waren",
+          "start": 41.38,
+          "end": 41.66
+        },
+        {
+          "text": "unzertrennlich.",
+          "start": 41.66,
+          "end": 42.8
+        }
+      ]
+    },
+    {
+      "text": "Fast jeden Tag nach der Schule trafen sie sich in Millas Garten.",
+      "start": 43.32,
+      "end": 47.36,
+      "words": [
+        {
+          "text": "Fast",
+          "start": 43.32,
+          "end": 43.64
+        },
+        {
+          "text": "jeden",
+          "start": 43.64,
+          "end": 43.94
+        },
+        {
+          "text": "Tag",
+          "start": 43.94,
+          "end": 44.187
+        },
+        {
+          "text": "nach",
+          "start": 44.187,
+          "end": 44.433
+        },
+        {
+          "text": "der",
+          "start": 44.433,
+          "end": 44.68
+        },
+        {
+          "text": "Schule",
+          "start": 44.68,
+          "end": 45.06
+        },
+        {
+          "text": "trafen",
+          "start": 45.06,
+          "end": 45.58
+        },
+        {
+          "text": "sie",
+          "start": 45.58,
+          "end": 46.1
+        },
+        {
+          "text": "sich",
+          "start": 46.1,
+          "end": 46.34
+        },
+        {
+          "text": "in",
+          "start": 46.34,
+          "end": 46.62
+        },
+        {
+          "text": "Millas",
+          "start": 46.62,
+          "end": 46.9
+        },
+        {
+          "text": "Garten.",
+          "start": 46.9,
+          "end": 47.36
+        }
+      ]
+    },
+    {
+      "text": "Dort stand er: der alte Bauwagen, den Millas Oma ihnen überlassen hatte.",
+      "start": 47.86,
+      "end": 52.94,
+      "words": [
+        {
+          "text": "Dort",
+          "start": 47.86,
+          "end": 48.12
+        },
+        {
+          "text": "stand",
+          "start": 48.12,
+          "end": 48.4
+        },
+        {
+          "text": "er:",
+          "start": 48.4,
+          "end": 48.88
+        },
+        {
+          "text": "der",
+          "start": 48.88,
+          "end": 49.36
+        },
+        {
+          "text": "alte",
+          "start": 49.36,
+          "end": 49.58
+        },
+        {
+          "text": "Bauwagen,",
+          "start": 49.58,
+          "end": 50.34
+        },
+        {
+          "text": "den",
+          "start": 50.34,
+          "end": 50.82
+        },
+        {
+          "text": "Millas",
+          "start": 50.82,
+          "end": 51.3
+        },
+        {
+          "text": "Oma",
+          "start": 51.3,
+          "end": 51.78
+        },
+        {
+          "text": "ihnen",
+          "start": 51.78,
+          "end": 52.02
+        },
+        {
+          "text": "überlassen",
+          "start": 52.02,
+          "end": 52.56
+        },
+        {
+          "text": "hatte.",
+          "start": 52.56,
+          "end": 52.94
+        }
+      ]
+    },
+    {
+      "text": "Eigentlich war der Bauwagen nichts Besonderes – ein bisschen Rost hier, abgeblätterte grüne Farbe dort.",
+      "start": 52.94,
+      "end": 59.48,
+      "words": [
+        {
+          "text": "Eigentlich",
+          "start": 52.94,
+          "end": 53.373
+        },
+        {
+          "text": "war",
+          "start": 53.373,
+          "end": 53.807
+        },
+        {
+          "text": "der",
+          "start": 53.807,
+          "end": 54.24
+        },
+        {
+          "text": "Bauwagen",
+          "start": 54.24,
+          "end": 54.8
+        },
+        {
+          "text": "nichts",
+          "start": 54.8,
+          "end": 55.1
+        },
+        {
+          "text": "Besonderes",
+          "start": 55.1,
+          "end": 56.04
+        },
+        {
+          "text": "–",
+          "start": 56.04,
+          "end": 56.31
+        },
+        {
+          "text": "ein",
+          "start": 56.31,
+          "end": 56.58
+        },
+        {
+          "text": "bisschen",
+          "start": 56.58,
+          "end": 56.84
+        },
+        {
+          "text": "Rost",
+          "start": 56.84,
+          "end": 57.22
+        },
+        {
+          "text": "hier,",
+          "start": 57.22,
+          "end": 57.56
+        },
+        {
+          "text": "abgeblätterte",
+          "start": 57.7,
+          "end": 58.46
+        },
+        {
+          "text": "grüne",
+          "start": 58.46,
+          "end": 58.76
+        },
+        {
+          "text": "Farbe",
+          "start": 58.76,
+          "end": 59.18
+        },
+        {
+          "text": "dort.",
+          "start": 59.18,
+          "end": 59.48
+        }
+      ]
+    },
+    {
+      "text": "Aber für die drei war er das Hauptquartier, die Festung, der beste Ort der ganzen Welt.",
+      "start": 60.1,
+      "end": 66.89,
+      "words": [
+        {
+          "text": "Aber",
+          "start": 60.1,
+          "end": 60.48
+        },
+        {
+          "text": "für",
+          "start": 60.48,
+          "end": 60.66
+        },
+        {
+          "text": "die",
+          "start": 60.66,
+          "end": 60.84
+        },
+        {
+          "text": "drei",
+          "start": 60.84,
+          "end": 61.18
+        },
+        {
+          "text": "war",
+          "start": 61.18,
+          "end": 61.46
+        },
+        {
+          "text": "er",
+          "start": 61.46,
+          "end": 61.74
+        },
+        {
+          "text": "das",
+          "start": 61.74,
+          "end": 62.02
+        },
+        {
+          "text": "Hauptquartier,",
+          "start": 62.02,
+          "end": 62.86
+        },
+        {
+          "text": "die",
+          "start": 62.86,
+          "end": 63.48
+        },
+        {
+          "text": "Festung,",
+          "start": 63.48,
+          "end": 63.98
+        },
+        {
+          "text": "der",
+          "start": 63.98,
+          "end": 64.66
+        },
+        {
+          "text": "beste",
+          "start": 64.66,
+          "end": 64.94
+        },
+        {
+          "text": "Ort",
+          "start": 64.94,
+          "end": 65.29
+        },
+        {
+          "text": "der",
+          "start": 65.29,
+          "end": 65.64
+        },
+        {
+          "text": "ganzen",
+          "start": 65.64,
+          "end": 65.94
+        },
+        {
+          "text": "Welt.",
+          "start": 65.94,
+          "end": 66.89
+        }
+      ]
+    },
+    {
+      "text": "Berry, Leos goldener Hund, trottete hinter ihnen her.",
+      "start": 66.89,
+      "end": 71.58,
+      "words": [
+        {
+          "text": "Berry,",
+          "start": 66.89,
+          "end": 67.84
+        },
+        {
+          "text": "Leos",
+          "start": 67.84,
+          "end": 68.34
+        },
+        {
+          "text": "goldener",
+          "start": 68.34,
+          "end": 68.88
+        },
+        {
+          "text": "Hund,",
+          "start": 68.88,
+          "end": 69.18
+        },
+        {
+          "text": "trottete",
+          "start": 69.18,
+          "end": 70
+        },
+        {
+          "text": "hinter",
+          "start": 70,
+          "end": 70.32
+        },
+        {
+          "text": "ihnen",
+          "start": 70.32,
+          "end": 70.54
+        },
+        {
+          "text": "her.",
+          "start": 70.54,
+          "end": 71.58
+        }
+      ]
+    },
+    {
+      "text": "Seine Zunge hing fast bis zum Boden, und er hechelte wie eine alte Dampflok.",
+      "start": 71.58,
+      "end": 77.56,
+      "words": [
+        {
+          "text": "Seine",
+          "start": 71.58,
+          "end": 71.9
+        },
+        {
+          "text": "Zunge",
+          "start": 71.9,
+          "end": 72.44
+        },
+        {
+          "text": "hing",
+          "start": 72.44,
+          "end": 72.76
+        },
+        {
+          "text": "fast",
+          "start": 72.76,
+          "end": 73.08
+        },
+        {
+          "text": "bis",
+          "start": 73.08,
+          "end": 73.38
+        },
+        {
+          "text": "zum",
+          "start": 73.38,
+          "end": 73.68
+        },
+        {
+          "text": "Boden,",
+          "start": 73.68,
+          "end": 74.08
+        },
+        {
+          "text": "und",
+          "start": 74.08,
+          "end": 74.6
+        },
+        {
+          "text": "er",
+          "start": 74.6,
+          "end": 75.12
+        },
+        {
+          "text": "hechelte",
+          "start": 75.12,
+          "end": 75.64
+        },
+        {
+          "text": "wie",
+          "start": 75.64,
+          "end": 76.16
+        },
+        {
+          "text": "eine",
+          "start": 76.16,
+          "end": 76.4
+        },
+        {
+          "text": "alte",
+          "start": 76.4,
+          "end": 76.84
+        },
+        {
+          "text": "Dampflok.",
+          "start": 76.84,
+          "end": 77.56
+        }
+      ]
+    },
+    {
+      "text": "Berry war mehr als nur ein Hund – er war wie ein fünftes Familienmitglied.",
+      "start": 77.56,
+      "end": 82.92,
+      "words": [
+        {
+          "text": "Berry",
+          "start": 77.56,
+          "end": 78.16
+        },
+        {
+          "text": "war",
+          "start": 78.16,
+          "end": 78.76
+        },
+        {
+          "text": "mehr",
+          "start": 78.76,
+          "end": 79.06
+        },
+        {
+          "text": "als",
+          "start": 79.06,
+          "end": 79.273
+        },
+        {
+          "text": "nur",
+          "start": 79.273,
+          "end": 79.487
+        },
+        {
+          "text": "ein",
+          "start": 79.487,
+          "end": 79.7
+        },
+        {
+          "text": "Hund",
+          "start": 79.7,
+          "end": 80
+        },
+        {
+          "text": "–",
+          "start": 80,
+          "end": 80.264
+        },
+        {
+          "text": "er",
+          "start": 80.264,
+          "end": 80.528
+        },
+        {
+          "text": "war",
+          "start": 80.528,
+          "end": 80.792
+        },
+        {
+          "text": "wie",
+          "start": 80.792,
+          "end": 81.056
+        },
+        {
+          "text": "ein",
+          "start": 81.056,
+          "end": 81.32
+        },
+        {
+          "text": "fünftes",
+          "start": 81.32,
+          "end": 81.92
+        },
+        {
+          "text": "Familienmitglied.",
+          "start": 81.92,
+          "end": 82.92
+        }
+      ]
+    },
+    {
+      "text": "Manchmal hatte Leo das Gefühl, Berry verstand mehr als die meisten Menschen.",
+      "start": 83.52,
+      "end": 88.38,
+      "words": [
+        {
+          "text": "Manchmal",
+          "start": 83.52,
+          "end": 84.02
+        },
+        {
+          "text": "hatte",
+          "start": 84.02,
+          "end": 84.32
+        },
+        {
+          "text": "Leo",
+          "start": 84.32,
+          "end": 84.67
+        },
+        {
+          "text": "das",
+          "start": 84.67,
+          "end": 85.02
+        },
+        {
+          "text": "Gefühl,",
+          "start": 85.02,
+          "end": 85.54
+        },
+        {
+          "text": "Berry",
+          "start": 85.54,
+          "end": 86.2
+        },
+        {
+          "text": "verstand",
+          "start": 86.2,
+          "end": 86.66
+        },
+        {
+          "text": "mehr",
+          "start": 86.66,
+          "end": 86.96
+        },
+        {
+          "text": "als",
+          "start": 86.96,
+          "end": 87.2
+        },
+        {
+          "text": "die",
+          "start": 87.2,
+          "end": 87.44
+        },
+        {
+          "text": "meisten",
+          "start": 87.44,
+          "end": 87.8
+        },
+        {
+          "text": "Menschen.",
+          "start": 87.8,
+          "end": 88.38
+        }
+      ]
+    },
+    {
+      "text": "Doch kaum hatten sie Millas Gartenzaun erreicht, blieben sie wie angewurzelt stehen.",
+      "start": 88.84,
+      "end": 93.56,
+      "words": [
+        {
+          "text": "Doch",
+          "start": 88.84,
+          "end": 89.12
+        },
+        {
+          "text": "kaum",
+          "start": 89.12,
+          "end": 89.44
+        },
+        {
+          "text": "hatten",
+          "start": 89.44,
+          "end": 89.7
+        },
+        {
+          "text": "sie",
+          "start": 89.7,
+          "end": 89.98
+        },
+        {
+          "text": "Millas",
+          "start": 89.98,
+          "end": 90.26
+        },
+        {
+          "text": "Gartenzaun",
+          "start": 90.26,
+          "end": 90.9
+        },
+        {
+          "text": "erreicht,",
+          "start": 90.9,
+          "end": 91.26
+        },
+        {
+          "text": "blieben",
+          "start": 91.84,
+          "end": 92.02
+        },
+        {
+          "text": "sie",
+          "start": 92.02,
+          "end": 92.26
+        },
+        {
+          "text": "wie",
+          "start": 92.26,
+          "end": 92.5
+        },
+        {
+          "text": "angewurzelt",
+          "start": 92.5,
+          "end": 93.22
+        },
+        {
+          "text": "stehen.",
+          "start": 93.22,
+          "end": 93.56
+        }
+      ]
+    },
+    {
+      "text": "Von der Werkstatt von Herrn Lohmann nebenan dröhnte ein ohrenbetäubender Lärm herüber – Hämmern, Sägen, Bohren, als würde jemand ein ganzes Haus auseinandernehmen.",
+      "start": 93.56,
+      "end": 105.08,
+      "words": [
+        {
+          "text": "Von",
+          "start": 93.56,
+          "end": 94.15
+        },
+        {
+          "text": "der",
+          "start": 94.15,
+          "end": 94.74
+        },
+        {
+          "text": "Werkstatt",
+          "start": 94.74,
+          "end": 95.26
+        },
+        {
+          "text": "von",
+          "start": 95.26,
+          "end": 95.46
+        },
+        {
+          "text": "Herrn",
+          "start": 95.46,
+          "end": 95.64
+        },
+        {
+          "text": "Lohmann",
+          "start": 95.64,
+          "end": 96.08
+        },
+        {
+          "text": "nebenan",
+          "start": 96.08,
+          "end": 96.72
+        },
+        {
+          "text": "dröhnte",
+          "start": 96.72,
+          "end": 97.387
+        },
+        {
+          "text": "ein",
+          "start": 97.387,
+          "end": 98.053
+        },
+        {
+          "text": "ohrenbetäubender",
+          "start": 98.053,
+          "end": 98.72
+        },
+        {
+          "text": "Lärm",
+          "start": 98.72,
+          "end": 99.1
+        },
+        {
+          "text": "herüber",
+          "start": 99.1,
+          "end": 99.58
+        },
+        {
+          "text": "–",
+          "start": 99.58,
+          "end": 100.24
+        },
+        {
+          "text": "Hämmern,",
+          "start": 100.24,
+          "end": 100.58
+        },
+        {
+          "text": "Sägen,",
+          "start": 101.06,
+          "end": 101.44
+        },
+        {
+          "text": "Bohren,",
+          "start": 101.98,
+          "end": 102.4
+        },
+        {
+          "text": "als",
+          "start": 102.4,
+          "end": 102.6
+        },
+        {
+          "text": "würde",
+          "start": 102.6,
+          "end": 102.86
+        },
+        {
+          "text": "jemand",
+          "start": 102.86,
+          "end": 103.2
+        },
+        {
+          "text": "ein",
+          "start": 103.2,
+          "end": 103.4
+        },
+        {
+          "text": "ganzes",
+          "start": 103.4,
+          "end": 103.84
+        },
+        {
+          "text": "Haus",
+          "start": 103.84,
+          "end": 104.02
+        },
+        {
+          "text": "auseinandernehmen.",
+          "start": 104.02,
+          "end": 105.08
+        }
+      ]
+    },
+    {
+      "text": "Herr Lohmann stand mit hochrotem Kopf in der Tür und hämmerte auf einem Stück Holz herum, als hätte es ihm etwas getan.",
+      "start": 105.8,
+      "end": 113.28,
+      "words": [
+        {
+          "text": "Herr",
+          "start": 105.8,
+          "end": 106.08
+        },
+        {
+          "text": "Lohmann",
+          "start": 106.08,
+          "end": 106.48
+        },
+        {
+          "text": "stand",
+          "start": 106.48,
+          "end": 106.78
+        },
+        {
+          "text": "mit",
+          "start": 106.78,
+          "end": 107.02
+        },
+        {
+          "text": "hochrotem",
+          "start": 107.02,
+          "end": 107.72
+        },
+        {
+          "text": "Kopf",
+          "start": 107.72,
+          "end": 108.06
+        },
+        {
+          "text": "in",
+          "start": 108.06,
+          "end": 108.403
+        },
+        {
+          "text": "der",
+          "start": 108.403,
+          "end": 108.747
+        },
+        {
+          "text": "Tür",
+          "start": 108.747,
+          "end": 109.09
+        },
+        {
+          "text": "und",
+          "start": 109.09,
+          "end": 109.433
+        },
+        {
+          "text": "hämmerte",
+          "start": 109.433,
+          "end": 109.777
+        },
+        {
+          "text": "auf",
+          "start": 109.777,
+          "end": 110.12
+        },
+        {
+          "text": "einem",
+          "start": 110.12,
+          "end": 110.34
+        },
+        {
+          "text": "Stück",
+          "start": 110.34,
+          "end": 110.58
+        },
+        {
+          "text": "Holz",
+          "start": 110.58,
+          "end": 110.98
+        },
+        {
+          "text": "herum,",
+          "start": 110.98,
+          "end": 111.36
+        },
+        {
+          "text": "als",
+          "start": 111.36,
+          "end": 111.65
+        },
+        {
+          "text": "hätte",
+          "start": 111.65,
+          "end": 111.94
+        },
+        {
+          "text": "es",
+          "start": 111.94,
+          "end": 112.23
+        },
+        {
+          "text": "ihm",
+          "start": 112.23,
+          "end": 112.52
+        },
+        {
+          "text": "etwas",
+          "start": 112.52,
+          "end": 112.82
+        },
+        {
+          "text": "getan.",
+          "start": 112.82,
+          "end": 113.28
+        }
+      ]
+    },
+    {
+      "text": "Auf der anderen Seite des Zauns startete Frau Seifert ihren ratternden alten Rasenmäher.",
+      "start": 113.28,
+      "end": 119.76,
+      "words": [
+        {
+          "text": "Auf",
+          "start": 113.28,
+          "end": 113.88
+        },
+        {
+          "text": "der",
+          "start": 113.88,
+          "end": 114.48
+        },
+        {
+          "text": "anderen",
+          "start": 114.48,
+          "end": 114.74
+        },
+        {
+          "text": "Seite",
+          "start": 114.74,
+          "end": 115.14
+        },
+        {
+          "text": "des",
+          "start": 115.14,
+          "end": 115.38
+        },
+        {
+          "text": "Zauns",
+          "start": 115.38,
+          "end": 115.76
+        },
+        {
+          "text": "startete",
+          "start": 115.76,
+          "end": 116.34
+        },
+        {
+          "text": "Frau",
+          "start": 116.34,
+          "end": 116.58
+        },
+        {
+          "text": "Seifert",
+          "start": 116.58,
+          "end": 117.12
+        },
+        {
+          "text": "ihren",
+          "start": 117.12,
+          "end": 117.42
+        },
+        {
+          "text": "ratternden",
+          "start": 117.42,
+          "end": 118.2
+        },
+        {
+          "text": "alten",
+          "start": 118.2,
+          "end": 118.98
+        },
+        {
+          "text": "Rasenmäher.",
+          "start": 118.98,
+          "end": 119.76
+        }
+      ]
+    },
+    {
+      "text": "Nicht, weil der Rasen es nötig gehabt hätte – oh nein.",
+      "start": 119.76,
+      "end": 123.262,
+      "words": [
+        {
+          "text": "Nicht,",
+          "start": 119.76,
+          "end": 120.08
+        },
+        {
+          "text": "weil",
+          "start": 120.08,
+          "end": 120.34
+        },
+        {
+          "text": "der",
+          "start": 120.34,
+          "end": 120.587
+        },
+        {
+          "text": "Rasen",
+          "start": 120.587,
+          "end": 120.833
+        },
+        {
+          "text": "es",
+          "start": 120.833,
+          "end": 121.08
+        },
+        {
+          "text": "nötig",
+          "start": 121.08,
+          "end": 121.46
+        },
+        {
+          "text": "gehabt",
+          "start": 121.46,
+          "end": 121.72
+        },
+        {
+          "text": "hätte",
+          "start": 121.72,
+          "end": 122.08
+        },
+        {
+          "text": "–",
+          "start": 122.08,
+          "end": 122.474
+        },
+        {
+          "text": "oh",
+          "start": 122.474,
+          "end": 122.868
+        },
+        {
+          "text": "nein.",
+          "start": 122.868,
+          "end": 123.262
+        }
+      ]
+    },
+    {
+      "text": "Sie schob das lärmende Ungetüm direkt an die Werkstattwand heran, so nah, dass man meinen könnte, sie wolle den Zaun gleich mit abmähen.",
+      "start": 123.262,
+      "end": 132.321,
+      "words": [
+        {
+          "text": "Sie",
+          "start": 123.262,
+          "end": 123.656
+        },
+        {
+          "text": "schob",
+          "start": 123.656,
+          "end": 124.049
+        },
+        {
+          "text": "das",
+          "start": 124.049,
+          "end": 124.443
+        },
+        {
+          "text": "lärmende",
+          "start": 124.443,
+          "end": 124.837
+        },
+        {
+          "text": "Ungetüm",
+          "start": 124.837,
+          "end": 125.231
+        },
+        {
+          "text": "direkt",
+          "start": 125.231,
+          "end": 125.625
+        },
+        {
+          "text": "an",
+          "start": 125.625,
+          "end": 126.019
+        },
+        {
+          "text": "die",
+          "start": 126.019,
+          "end": 126.413
+        },
+        {
+          "text": "Werkstattwand",
+          "start": 126.413,
+          "end": 126.807
+        },
+        {
+          "text": "heran,",
+          "start": 126.807,
+          "end": 127.201
+        },
+        {
+          "text": "so",
+          "start": 127.201,
+          "end": 127.594
+        },
+        {
+          "text": "nah,",
+          "start": 127.594,
+          "end": 127.988
+        },
+        {
+          "text": "dass",
+          "start": 127.988,
+          "end": 128.382
+        },
+        {
+          "text": "man",
+          "start": 128.382,
+          "end": 128.776
+        },
+        {
+          "text": "meinen",
+          "start": 128.776,
+          "end": 129.17
+        },
+        {
+          "text": "könnte,",
+          "start": 129.17,
+          "end": 129.564
+        },
+        {
+          "text": "sie",
+          "start": 129.564,
+          "end": 129.958
+        },
+        {
+          "text": "wolle",
+          "start": 129.958,
+          "end": 130.352
+        },
+        {
+          "text": "den",
+          "start": 130.352,
+          "end": 130.746
+        },
+        {
+          "text": "Zaun",
+          "start": 130.746,
+          "end": 131.139
+        },
+        {
+          "text": "gleich",
+          "start": 131.139,
+          "end": 131.533
+        },
+        {
+          "text": "mit",
+          "start": 131.533,
+          "end": 131.927
+        },
+        {
+          "text": "abmähen.",
+          "start": 131.927,
+          "end": 132.321
+        }
+      ]
+    },
+    {
+      "text": "„Wenn der meint, er kann den ganzen Tag Krach machen”, rief sie über den Lärm hinweg, „kann ich das auch!”",
+      "start": 132.321,
+      "end": 140.199,
+      "words": [
+        {
+          "text": "„Wenn",
+          "start": 132.321,
+          "end": 132.715
+        },
+        {
+          "text": "der",
+          "start": 132.715,
+          "end": 133.109
+        },
+        {
+          "text": "meint,",
+          "start": 133.109,
+          "end": 133.503
+        },
+        {
+          "text": "er",
+          "start": 133.503,
+          "end": 133.897
+        },
+        {
+          "text": "kann",
+          "start": 133.897,
+          "end": 134.291
+        },
+        {
+          "text": "den",
+          "start": 134.291,
+          "end": 134.684
+        },
+        {
+          "text": "ganzen",
+          "start": 134.684,
+          "end": 135.078
+        },
+        {
+          "text": "Tag",
+          "start": 135.078,
+          "end": 135.472
+        },
+        {
+          "text": "Krach",
+          "start": 135.472,
+          "end": 135.866
+        },
+        {
+          "text": "machen”,",
+          "start": 135.866,
+          "end": 136.26
+        },
+        {
+          "text": "rief",
+          "start": 136.26,
+          "end": 136.654
+        },
+        {
+          "text": "sie",
+          "start": 136.654,
+          "end": 137.048
+        },
+        {
+          "text": "über",
+          "start": 137.048,
+          "end": 137.442
+        },
+        {
+          "text": "den",
+          "start": 137.442,
+          "end": 137.836
+        },
+        {
+          "text": "Lärm",
+          "start": 137.836,
+          "end": 138.229
+        },
+        {
+          "text": "hinweg,",
+          "start": 138.229,
+          "end": 138.623
+        },
+        {
+          "text": "„kann",
+          "start": 138.623,
+          "end": 139.017
+        },
+        {
+          "text": "ich",
+          "start": 139.017,
+          "end": 139.411
+        },
+        {
+          "text": "das",
+          "start": 139.411,
+          "end": 139.805
+        },
+        {
+          "text": "auch!”",
+          "start": 139.805,
+          "end": 140.199
+        }
+      ]
+    },
+    {
+      "text": "Herr Lohmann hämmerte nur noch lauter.",
+      "start": 140.199,
+      "end": 142.562,
+      "words": [
+        {
+          "text": "Herr",
+          "start": 140.199,
+          "end": 140.593
+        },
+        {
+          "text": "Lohmann",
+          "start": 140.593,
+          "end": 140.987
+        },
+        {
+          "text": "hämmerte",
+          "start": 140.987,
+          "end": 141.381
+        },
+        {
+          "text": "nur",
+          "start": 141.381,
+          "end": 141.774
+        },
+        {
+          "text": "noch",
+          "start": 141.774,
+          "end": 142.168
+        },
+        {
+          "text": "lauter.",
+          "start": 142.168,
+          "end": 142.562
+        }
+      ]
+    },
+    {
+      "text": "Berry legte die Ohren an und winselte unbehaglich.",
+      "start": 142.562,
+      "end": 145.713,
+      "words": [
+        {
+          "text": "Berry",
+          "start": 142.562,
+          "end": 142.956
+        },
+        {
+          "text": "legte",
+          "start": 142.956,
+          "end": 143.35
+        },
+        {
+          "text": "die",
+          "start": 143.35,
+          "end": 143.744
+        },
+        {
+          "text": "Ohren",
+          "start": 143.744,
+          "end": 144.138
+        },
+        {
+          "text": "an",
+          "start": 144.138,
+          "end": 144.532
+        },
+        {
+          "text": "und",
+          "start": 144.532,
+          "end": 144.926
+        },
+        {
+          "text": "winselte",
+          "start": 144.926,
+          "end": 145.319
+        },
+        {
+          "text": "unbehaglich.",
+          "start": 145.319,
+          "end": 145.713
+        }
+      ]
+    },
+    {
+      "text": "Er mochte Streit nicht – das spürte Leo sofort.",
+      "start": 145.713,
+      "end": 149.258,
+      "words": [
+        {
+          "text": "Er",
+          "start": 145.713,
+          "end": 146.107
+        },
+        {
+          "text": "mochte",
+          "start": 146.107,
+          "end": 146.501
+        },
+        {
+          "text": "Streit",
+          "start": 146.501,
+          "end": 146.895
+        },
+        {
+          "text": "nicht",
+          "start": 146.895,
+          "end": 147.289
+        },
+        {
+          "text": "–",
+          "start": 147.289,
+          "end": 147.683
+        },
+        {
+          "text": "das",
+          "start": 147.683,
+          "end": 148.077
+        },
+        {
+          "text": "spürte",
+          "start": 148.077,
+          "end": 148.471
+        },
+        {
+          "text": "Leo",
+          "start": 148.471,
+          "end": 148.864
+        },
+        {
+          "text": "sofort.",
+          "start": 148.864,
+          "end": 149.258
+        }
+      ]
+    },
+    {
+      "text": "Leo schüttelte den Kopf.",
+      "start": 149.258,
+      "end": 150.76,
+      "words": [
+        {
+          "text": "Leo",
+          "start": 149.258,
+          "end": 149.652
+        },
+        {
+          "text": "schüttelte",
+          "start": 149.652,
+          "end": 150.046
+        },
+        {
+          "text": "den",
+          "start": 150.046,
+          "end": 150.44
+        },
+        {
+          "text": "Kopf.",
+          "start": 150.44,
+          "end": 150.76
+        }
+      ]
+    },
+    {
+      "text": "„Die sind ja verrückt geworden.”",
+      "start": 150.76,
+      "end": 152.88,
+      "words": [
+        {
+          "text": "„Die",
+          "start": 150.76,
+          "end": 151.187
+        },
+        {
+          "text": "sind",
+          "start": 151.187,
+          "end": 151.613
+        },
+        {
+          "text": "ja",
+          "start": 151.613,
+          "end": 152.04
+        },
+        {
+          "text": "verrückt",
+          "start": 152.04,
+          "end": 152.44
+        },
+        {
+          "text": "geworden.”",
+          "start": 152.44,
+          "end": 152.88
+        }
+      ]
+    },
+    {
+      "text": "Milla seufzte und öffnete die Gartenpforte.",
+      "start": 152.88,
+      "end": 156.5,
+      "words": [
+        {
+          "text": "Milla",
+          "start": 152.88,
+          "end": 153.567
+        },
+        {
+          "text": "seufzte",
+          "start": 153.567,
+          "end": 154.253
+        },
+        {
+          "text": "und",
+          "start": 154.253,
+          "end": 154.94
+        },
+        {
+          "text": "öffnete",
+          "start": 154.94,
+          "end": 155.5
+        },
+        {
+          "text": "die",
+          "start": 155.5,
+          "end": 155.68
+        },
+        {
+          "text": "Gartenpforte.",
+          "start": 155.68,
+          "end": 156.5
+        }
+      ]
+    },
+    {
+      "text": "„Erwachsene.",
+      "start": 157.06,
+      "end": 157.7,
+      "words": [
+        {
+          "text": "„Erwachsene.",
+          "start": 157.06,
+          "end": 157.7
+        }
+      ]
+    },
+    {
+      "text": "Manchmal verstehe ich die überhaupt nicht.”",
+      "start": 158.4,
+      "end": 160.48,
+      "words": [
+        {
+          "text": "Manchmal",
+          "start": 158.4,
+          "end": 158.9
+        },
+        {
+          "text": "verstehe",
+          "start": 158.9,
+          "end": 159.16
+        },
+        {
+          "text": "ich",
+          "start": 159.16,
+          "end": 159.42
+        },
+        {
+          "text": "die",
+          "start": 159.42,
+          "end": 159.68
+        },
+        {
+          "text": "überhaupt",
+          "start": 159.68,
+          "end": 160.08
+        },
+        {
+          "text": "nicht.”",
+          "start": 160.08,
+          "end": 160.48
+        }
+      ]
+    },
+    {
+      "text": "Sam winkte ihnen zu.",
+      "start": 160.48,
+      "end": 163.26,
+      "words": [
+        {
+          "text": "Sam",
+          "start": 160.48,
+          "end": 161.5
+        },
+        {
+          "text": "winkte",
+          "start": 161.5,
+          "end": 161.96
+        },
+        {
+          "text": "ihnen",
+          "start": 161.96,
+          "end": 162.14
+        },
+        {
+          "text": "zu.",
+          "start": 162.14,
+          "end": 163.26
+        }
+      ]
+    },
+    {
+      "text": "„Kommt, lass uns abhauen.",
+      "start": 163.26,
+      "end": 164.62,
+      "words": [
+        {
+          "text": "„Kommt,",
+          "start": 163.26,
+          "end": 163.52
+        },
+        {
+          "text": "lass",
+          "start": 163.84,
+          "end": 163.92
+        },
+        {
+          "text": "uns",
+          "start": 163.92,
+          "end": 164.1
+        },
+        {
+          "text": "abhauen.",
+          "start": 164.1,
+          "end": 164.62
+        }
+      ]
+    },
+    {
+      "text": "Im Bauwagen hören wir das wenigstens nicht so laut.”",
+      "start": 164.62,
+      "end": 167.6,
+      "words": [
+        {
+          "text": "Im",
+          "start": 164.62,
+          "end": 165.3
+        },
+        {
+          "text": "Bauwagen",
+          "start": 165.3,
+          "end": 165.8
+        },
+        {
+          "text": "hören",
+          "start": 165.8,
+          "end": 165.987
+        },
+        {
+          "text": "wir",
+          "start": 165.987,
+          "end": 166.173
+        },
+        {
+          "text": "das",
+          "start": 166.173,
+          "end": 166.36
+        },
+        {
+          "text": "wenigstens",
+          "start": 166.36,
+          "end": 166.94
+        },
+        {
+          "text": "nicht",
+          "start": 166.94,
+          "end": 167.12
+        },
+        {
+          "text": "so",
+          "start": 167.12,
+          "end": 167.34
+        },
+        {
+          "text": "laut.”",
+          "start": 167.34,
+          "end": 167.6
+        }
+      ]
+    }
+  ]
+}
