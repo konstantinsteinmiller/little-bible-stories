@@ -1,6 +1,6 @@
 export default {
   en: {
-    gameName: 'Kanaan Stories',
+    gameName: 'Little Bible Stories',
     cancel: 'Cancel',
     close: 'Close',
     understood: 'Understood',
@@ -19,7 +19,7 @@ export default {
     clickToContinue: 'Click to continue'
   },
   de: {
-    gameName: 'Kanaan Stories',
+    gameName: 'Little Bible Stories',
     cancel: 'Abbrechen',
     close: 'Schließen',
     understood: 'Verstanden',
@@ -38,7 +38,7 @@ export default {
     clickToContinue: 'Klicken zum Fortfahren'
   },
   fr: {
-    gameName: 'Kanaan Stories',
+    gameName: 'Little Bible Stories',
     cancel: 'Annuler',
     close: 'Fermer',
     understood: 'Compris',
@@ -57,7 +57,7 @@ export default {
     clickToContinue: 'Cliquez pour continuer'
   },
   es: {
-    gameName: 'Kanaan Stories',
+    gameName: 'Little Bible Stories',
     cancel: 'Cancelar',
     close: 'Cerrar',
     understood: 'Entendido',
@@ -133,7 +133,7 @@ export default {
     clickToContinue: '点击屏幕继续'
   },
   ru: {
-    gameName: 'Kanaan Stories',
+    gameName: 'Little Bible Stories',
     cancel: 'Отмена',
     close: 'Закрыть',
     understood: 'Понятно',

@@ -1,7 +1,7 @@
-# Kanaan Stories
+# Little Bible Stories
 
-Kanaan Stories audiobook and stories app
+Little Bible Stories is an audiobook and stories app
 
-prototype: [playable demo](https://konstantinsteinmiller.github.io/kanaan-stories/)
+prototype: [playable demo](https://konstantinsteinmiller.github.io/little-bible-stories/)
 
 # Todo

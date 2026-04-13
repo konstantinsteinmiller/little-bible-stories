@@ -4,8 +4,8 @@ export default {
       title: 'Mission Peace',
       page: {
         1: {
-          title: '',
-          text: 'The hot sun...'
+          title: 'The Hottest Street in Town',
+          text: 'The sun was beating down on Rosenstraße that afternoon so hard that you could have fried eggs on the pavement. Leo fanned himself with his T-shirt and wiped the sweat from his forehead.'
         },
         2: {
           title: '',
@@ -76,49 +76,26 @@ export default {
       page: {
         1: {
           title: 'Die heißeste Straße der Stadt',
-          text: 'Die Sonne knallte an diesem Nachmittag so heiß auf die Rosenstraße,\n' +
-            'dass man hätte Spiegeleier auf der Straße braten können. Leo\n' +
-            'fächelte sich mit seinem T-Shirt Luft zu und wischte sich den Schweiß\n' +
-            'von der Stirn.\n' +
-            '„Mir ist so heiß”, stöhnte er, „dass ich glaube, ich schmelze gleich wie\n' +
-            'ein Eis am Stiel.”\n' +
-            'Sam nickte und zog sein Baseballcap tiefer ins Gesicht, um sich vor\n' +
-            'der grellen Sonne zu schützen. „Dann komm, wir gehen zu Milla in\n' +
+          text: 'Die Sonne knallte an diesem Nachmittag so heiß auf die Rosenstraße, dass man hätte Spiegeleier auf der Straße braten können. Leo\n' +
+            'fächelte sich mit seinem T-Shirt Luft zu und wischte sich den Schweiß von der Stirn.\n' +
+            '„Mir ist so heiß”, stöhnte er, „dass ich glaube, ich schmelze gleich wie ein Eis am Stiel.”\n' +
+            'Sam nickte und zog sein Baseballcap tiefer ins Gesicht, um sich vor der grellen Sonne zu schützen. „Dann komm, wir gehen zu Milla in\n' +
             'den Bauwagen. Da ist es wenigstens schattig.”\n' +
-            'Die drei Freunde – Leo mit seinen zerzausten braunen Haaren, Sam\n' +
-            'mit dem roten Baseballcap und Milla mit ihrem langen blonden Zopf –\n' +
-            'waren unzertrennlich. Fast jeden Tag nach der Schule trafen sie sich\n' +
-            'in Millas Garten. Dort stand er: der alte Bauwagen, den Millas Oma\n' +
-            'ihnen überlassen hatte.\n' +
-            'Eigentlich war der Bauwagen nichts Besonderes – ein bisschen Rost\n' +
-            'hier, abgeblätterte grüne Farbe dort. Aber für die drei war er das\n' +
+            'Die drei Freunde – Leo mit seinen zerzausten braunen Haaren, Sam mit dem roten Baseballcap und Milla mit ihrem langen blonden Zopf –\n' +
+            'waren unzertrennlich. Fast jeden Tag nach der Schule trafen sie sich in Millas Garten. Dort stand er: der alte Bauwagen, den Millas Oma ihnen überlassen hatte.\n' +
+            'Eigentlich war der Bauwagen nichts Besonderes – ein bisschen Rost hier, abgeblätterte grüne Farbe dort. Aber für die drei war er das\n' +
             'Hauptquartier, die Festung, der beste Ort der ganzen Welt.\n' +
-            'Berry, Leos goldener Hund, trottete hinter ihnen her. Seine Zunge\n' +
-            'hing fast bis zum Boden, und er hechelte wie eine alte Dampflok.\n' +
-            'Berry war mehr als nur ein Hund – er war wie ein fünftes\n' +
-            'Familienmitglied. Manchmal hatte Leo das Gefühl, Berry verstand\n' +
-            'mehr als die meisten Menschen.\n' +
-            'Doch kaum hatten sie Millas Gartenzaun erreicht, blieben sie wie\n' +
-            'angewurzelt stehen.\n' +
-            'Von der Werkstatt von Herrn Lohmann nebenan dröhnte ein\n' +
-            'ohrenbetäubender Lärm herüber – Hämmern, Sägen, Bohren, als\n' +
-            'würde jemand ein ganzes Haus auseinandernehmen. Herr Lohmann\n' +
-            'stand mit hochrotem Kopf in der Tür und hämmerte auf einem Stück\n' +
-            'Holz herum, als hätte es ihm etwas getan.\n' +
-            'Auf der anderen Seite des Zauns startete Frau Seifert ihren\n' +
-            'ratternden alten Rasenmäher. Nicht, weil der Rasen es nötig gehabt\n' +
-            'hätte – oh nein. Sie schob das lärmende Ungetüm direkt an die\n' +
-            'Werkstattwand heran, so nah, dass man meinen könnte, sie wolle den\n' +
-            'Zaun gleich mit abmähen.\n' +
-            '„Wenn der meint, er kann den ganzen Tag Krach machen”, rief sie\n' +
-            'über den Lärm hinweg, „kann ich das auch!”\n' +
-            'Herr Lohmann hämmerte nur noch lauter.\n' +
-            'Berry legte die Ohren an und winselte unbehaglich. Er mochte Streit\n' +
-            'nicht – das spürte Leo sofort.\n' +
+            'Berry, Leos goldener Hund, trottete hinter ihnen her. Seine Zunge hing fast bis zum Boden, und er hechelte wie eine alte Dampflok.\n' +
+            'Berry war mehr als nur ein Hund – er war wie ein fünftes Familienmitglied. Manchmal hatte Leo das Gefühl, Berry verstand\n' +
+            'mehr als die meisten Menschen. Doch kaum hatten sie Millas Gartenzaun erreicht, blieben sie wie angewurzelt stehen.\n' +
+            'Von der Werkstatt von Herrn Lohmann nebenan dröhnte ein ohrenbetäubender Lärm herüber – Hämmern, Sägen, Bohren, als\n' +
+            'würde jemand ein ganzes Haus auseinandernehmen. Herr Lohmann stand mit hochrotem Kopf in der Tür und hämmerte auf einem Stück\n' +
+            'Holz herum, als hätte es ihm etwas getan. Auf der anderen Seite des Zauns startete Frau Seifert ihren ratternden alten Rasenmäher. Nicht, weil der Rasen es nötig gehabt hätte – oh nein. Sie schob das lärmende Ungetüm direkt an die\n' +
+            'Werkstattwand heran, so nah, dass man meinen könnte, sie wolle den Zaun gleich mit abmähen.\n' +
+            '„Wenn der meint, er kann den ganzen Tag Krach machen”, rief sie über den Lärm hinweg, „kann ich das auch!”\n' +
+            'Herr Lohmann hämmerte nur noch lauter. Berry legte die Ohren an und winselte unbehaglich. Er mochte Streit nicht – das spürte Leo sofort.\n' +
             'Leo schüttelte den Kopf. „Die sind ja verrückt geworden.”\n' +
-            'Milla seufzte und öffnete die Gartenpforte. „Erwachsene. Manchmal\n' +
-            'verstehe ich die überhaupt nicht.”\n' +
-            'Sam winkte ihnen zu. „Kommt, lass uns abhauen. Im Bauwagen hören\n' +
+            'Milla seufzte und öffnete die Gartenpforte. „Erwachsene. Manchmal verstehe ich die überhaupt nicht.” Sam winkte ihnen zu. „Kommt, lass uns abhauen. Im Bauwagen hören\n' +
             'wir das wenigstens nicht so laut.”\n'
         },
         2: {

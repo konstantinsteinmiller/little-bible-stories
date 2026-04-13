@@ -1,10 +1,10 @@
 {
-  "name": "Kanaan Stories",
+  "name": "Little Bible Stories",
   "short_name": "Kanaan",
   "description": "Read and listen to stories about biblical figures, together with your kids.",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/kanaan-stories/#/app",
+  "start_url": "/little-bible-stories/#/app",
   "scope": "/",
   "theme_color": "#1F6FA8",
   "background_color": "#3498DB",

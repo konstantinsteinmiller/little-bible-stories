@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import ListView from '@/views/ListView.vue'
 import DesignSystemView from '@/views/DesignSystemView.vue'
 import DesignSystemSView from '@/views/DesignSystemSView.vue'
+import DesignSystemAView from '@/views/DesignSystemAView.vue'
 import AppMainView from '@/views/app/AppMainView.vue'
 import AppBookSeriesView from '@/views/app/AppBookSeriesView.vue'
 import AppBookDetailView from '@/views/app/AppBookDetailView.vue'
@@ -13,6 +14,7 @@ const routes = [
   { path: '/', name: 'main-menu', component: ListView, redirect: '/app' },
   { path: '/design-system', name: 'design-system', component: DesignSystemView },
   { path: '/design-system-s', name: 'design-system-s', component: DesignSystemSView },
+  { path: '/design-system-a', name: 'design-system-a', component: DesignSystemAView },
   { path: '/app', name: 'app-main', component: AppMainView },
   { path: '/app/series/:seriesId', name: 'app-series', component: AppBookSeriesView },
   { path: '/app/book/:bookId', name: 'app-book', component: AppBookDetailView },
@@ -37,8 +39,8 @@ router.beforeEach((to, from) => {
 
   // Only apply restrictions if it's the Web version
   if (isWeb) {
-    const isFullVersion = url.includes(remoteURL + '/kanaan-stories/') && !url.includes('/kanaan-stories/demo/') && !url.includes('/kanaan-stories/develop/')
-    const isDevelopVersion = url.includes(remoteURL + '/kanaan-stories/develop/')
+    const isFullVersion = url.includes(remoteURL + '/little-bible-stories/') && !url.includes('/little-bible-stories/demo/') && !url.includes('/little-bible-stories/develop/')
+    const isDevelopVersion = url.includes(remoteURL + '/little-bible-stories/develop/')
     const isDev = url.includes('localhost:5173/')
 
     if (isDev) {
@@ -47,7 +49,7 @@ router.beforeEach((to, from) => {
 
     // If user is on Full or Develop without the unlock param, boot them to Demo
     if ((isFullVersion || isDevelopVersion) && !isUnlocked) {
-      window.location.href = remoteURL + '/kanaan-stories/demo/'
+      window.location.href = remoteURL + '/little-bible-stories/demo/'
       return false// Stop execution
     } else if (isUnlocked && (isFullVersion || isDevelopVersion)) {
       localStorage.setItem('full_unlocked', 'true')

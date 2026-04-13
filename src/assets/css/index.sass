@@ -44,14 +44,26 @@ html, body
     opacity: 0.7
 
 
-// --- Brand Colors ---
-$color-brand-primary: #3498DB
-// Vibrant Sky Blue (Backgrounds)
-$color-brand-secondary: #F1C40F
-// Sunlight Yellow (High-priority buttons/Coins)
-$color-brand-accent: #E67E22
-// Warm Orange (Buttons/Highlights)
-
+//To help you build a consistent and maintainable UI, I’ve extracted the color palette from the images and organized them into Sass (SCSS) variables.
+//
+//The naming convention follows a functional approach, making it clear where each color should be applied in your component library.
+//Master Color Palette (Sass Definitions)
+//SCSS
+$color-ui-white: #FFFFFF
+// Card backgrounds
+$color-ui-light-gray: #ECF0F1
+// Subtle borders/Dividers
+$color-ui-text-main: #2C3E50
+// Dark Navy (For readability)
+$color-ui-text-muted: #7F8C8D
+// Gray (Secondary info like Level 0)
+// --- Advanced Module Palette ---
+$color-mod-purple: #9B59B6
+// Amethyst Purple (Mixed Operations)
+$color-mod-teal: #1ABC9C
+// Turquoise (Fractions/Multi-digit)
+$color-mod-navy: #34495E
+// Deep Blue (Navigation icons/Text)
 // --- Math Operation Palette (Category-based) ---
 $color-math-addition: #2ECC71
 // Vibrant Green
@@ -61,24 +73,65 @@ $color-math-multi: #27AE60
 // Deeper Lime Green
 $color-math-division: #A2D149
 // Yellow-Green
+// --- Math Operation Palette (Category-based) ---
+$color-math-addition: #2ECC71
+// Vibrant Green
+$color-math-subtraction: #E74C3C
+// Coral Red
+$color-math-multi: #27AE60
+// Deeper Lime Green
+$color-math-division: #A2D149
+// Yellow-Green
+$color-brand-primary: #3498DB
+// Vibrant Sky Blue (Backgrounds)
+$color-brand-secondary: #F1C40F
+// Sunlight Yellow (High-priority buttons/Coins)
+$color-brand-accent: #E67E22
+// Warm Orange (Buttons/Highlights)
 
-// --- Advanced Module Palette ---
-$color-mod-purple: #9B59B6
-// Amethyst Purple (Mixed Operations)
-$color-mod-teal: #1ABC9C
-// Turquoise (Fractions/Multi-digit)
-$color-mod-navy: #34495E
-// Deep Blue (Navigation icons/Text)
 
-// --- Neutrals & UI Essentials ---
-$color-ui-white: #FFFFFF
-// Card backgrounds
-$color-ui-light-gray: #ECF0F1
-// Subtle borders/Dividers
-$color-ui-text-main: #2C3E50
-// Dark Navy (For readability)
-$color-ui-text-muted: #7F8C8D
-// Gray (Secondary info like Level 0)
+
+// --- Brand Colors ---
+$color-brand-primary: #7E3AF2
+// "Royal Grape" - Used for headers and primary actions
+$color-brand-accent: #FFD147
+// "Golden Sun" - Used for premium highlights (Unlock button)
+$color-brand-accent-text: #1A1A1A
+// High-contrast text for gold elements
+
+// --- Surface & Backgrounds ---
+$color-bg-main: #F3EFFF
+// "Soft Lavender" - The primary app background
+$color-bg-card: #FFFFFF
+// "Cloud White" - Surface for content cards
+$color-bg-active-pill: #E5DEFF
+// "Muted Periwinkle" - Background for chips and tags
+
+// --- Typography ---
+$color-text-header: #FFFFFF
+// White text for dark headers
+$color-text-primary: #1A0B2E
+// "Midnight Purple" - Main body and title text
+$color-text-secondary: #9280A5
+// "Dusty Mauve" - Metadata, breadcrumbs, and captions
+$color-text-link: #7E3AF2
+// Active link color (e.g., "Alle ->")
+
+// --- Interactive & Status ---
+$color-interactive-play: #7E3AF2
+// Color for play buttons and active progress
+$color-status-new: #FFD147
+// Background for the "NEU" badge
+$color-nav-inactive: #A0AEC0
+// Inactive state for bottom navigation icons
+$color-nav-active: #7E3AF2
+// Active state for bottom navigation       // Active state for bottom navigation
+
+// --- Progress & Borders ---
+$color-progress-track: #E2E8F0
+// Background of the progress bar
+$color-border-subtle: #E2E8F0
+// Very faint borders for cards or dividers
 
 // --- Usage Example ---
 .btn-practice

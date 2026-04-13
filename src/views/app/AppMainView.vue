@@ -142,7 +142,7 @@ const lastReadSeries = computed(() => {
 
 <i18n>
 en:
-  appTitle: "Kanaan Stories"
+  appTitle: "Little Bible Stories"
   welcome: "Welcome back"
   lastRead: "Continue listening"
   continueReading: "Continue reading"
