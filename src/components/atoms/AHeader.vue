@@ -63,8 +63,6 @@ button
 
 .a-header
   background: linear-gradient(180deg, #4a1b91 0%, #3a1272 100%)
-  border-bottom-left-radius: 32px
-  border-bottom-right-radius: 32px
   box-shadow: 0 12px 28px -10px rgba(61, 22, 118, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08)
   color: #ffffff
 

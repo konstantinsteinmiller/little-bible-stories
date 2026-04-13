@@ -22,14 +22,14 @@ withDefaults(defineProps<Props>(), {
       `a-badge-${size}`,\
       position !== 'static' ? `a-badge-${position} absolute` : 'inline-block'\
     ]"
-    class="select-none pointer-events-none"
+    class="a-badge select-none pointer-events-none"
   )
     slot {{ label }}
 </template>
 
 <style scoped lang="sass">
 .a-badge
-  font-family: "Arial Narrow", "Roboto Condensed", "Helvetica Neue Condensed", system-ui, sans-serif
+  font-family: "Nunito", "Arial Narrow", "Roboto Condensed", "Helvetica Neue Condensed", system-ui, sans-serif
   font-weight: 900
   font-stretch: condensed
   letter-spacing: 0.08em

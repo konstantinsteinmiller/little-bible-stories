@@ -43,10 +43,10 @@ const onPointerDown = (e: PointerEvent) => {
     @click="$emit('click')"
     @pointerdown="onPointerDown"
     :class="{ 'opacity-50 grayscale pointer-events-none': isDisabled }"
-    class="a-card group relative flex w-full items-center gap-4 md:gap-5 overflow-hidden cursor-pointer select-none p-3 md:p-4"
+    class="a-card group relative flex w-full items-stretch overflow-hidden cursor-pointer select-none p-0"
   )
-    //- LEFT: 3D illustration square
-    div(class="a-card-image relative shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden")
+    //- LEFT: flush-embedded illustration, extends top-to-bottom
+    div(class="a-card-image relative self-stretch shrink-0 w-20 sm:w-28 md:w-32 overflow-hidden")
       slot(name="image")
         img(
           v-if="image"
@@ -54,27 +54,29 @@ const onPointerDown = (e: PointerEvent) => {
           :alt="imageAlt || title"
           class="absolute inset-0 w-full h-full object-cover"
         )
-      span(class="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/10")
+      span(class="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10")
+      slot(name="badge")
 
     //- RIGHT: text content
-    div(class="relative flex-1 min-w-0 flex flex-col gap-1.5")
+    div(class="a-card-content relative flex-1 min-w-0 flex flex-col gap-0.5 sm:gap-1.5 p-2.5 sm:p-4")
       span(
         v-if="category"
-        class="a-card-category inline-block self-start text-[10px] md:text-[11px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-full"
+        class="a-card-category inline-block self-start max-w-full truncate text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.08em] sm:tracking-[0.12em] px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full"
       )
         | {{ category }}
-      h3(class="a-card-title font-extrabold text-base md:text-lg leading-tight truncate")
+      h3(class="a-card-title font-extrabold text-[13px] sm:text-base md:text-lg leading-tight")
         slot(name="title") {{ title }}
       div(
         v-if="tags && tags.length"
-        class="flex flex-wrap gap-1.5 mt-0.5"
+        class="flex flex-wrap gap-1 sm:gap-1.5 mt-0.5"
       )
         span(
           v-for="tag in tags"
           :key="tag"
-          class="a-card-tag text-[10px] md:text-[11px] font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap"
+          class="a-card-tag text-[8px] sm:text-[10px] md:text-[11px] font-semibold px-1.5 sm:px-2.5 py-0.5 rounded-full whitespace-nowrap"
         )
           | {{ tag }}
+      slot
 
     //- Hover glow overlay
     span(class="a-card-glow pointer-events-none absolute inset-0")
@@ -106,9 +108,8 @@ const onPointerDown = (e: PointerEvent) => {
     box-shadow: 0 1px 3px rgba(61, 22, 118, 0.08), 0 10px 22px -10px rgba(138, 63, 252, 0.3)
 
 .a-card-image
-  border-radius: 20px
   background: linear-gradient(160deg, #e9dcff 0%, #cdb2ff 60%, #a57cff 100%)
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -6px 12px rgba(61, 22, 118, 0.22), 0 6px 14px -6px rgba(61, 22, 118, 0.3)
+  box-shadow: inset -4px 0 10px rgba(61, 22, 118, 0.15)
 
 .a-card-category
   color: #6929c4
@@ -118,6 +119,12 @@ const onPointerDown = (e: PointerEvent) => {
 .a-card-title
   color: #2a0f55
   letter-spacing: 0.01em
+  display: -webkit-box
+  -webkit-line-clamp: 2
+  -webkit-box-orient: vertical
+  overflow: hidden
+  word-break: break-word
+  overflow-wrap: anywhere
 
 .a-card-tag
   color: #5b21b6

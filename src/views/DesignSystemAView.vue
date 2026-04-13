@@ -38,6 +38,32 @@ const aComponents = [
   'BBottomNav', 'AHeader', 'ABreadcrumbs', 'AIconography'
 ]
 
+interface TransitionDef {
+  name: string
+  label: string
+  emoji: string
+  desc: string
+}
+
+const pageTransitions: TransitionDef[] = [
+  { name: 'page-playful', label: 'Playful', emoji: '✨', desc: 'Gentle lift-in with a little tilt — the default' },
+  { name: 'page-balloon', label: 'Balloon', emoji: '🎈', desc: 'Drops from above and bounces with squash & stretch' },
+  { name: 'page-swoosh', label: 'Swoosh', emoji: '💨', desc: 'Whooshes in from the right with a tilt' },
+  { name: 'page-spin', label: 'Spin Pop', emoji: '🪙', desc: 'Coin-flip spin with a pop at the end' },
+  { name: 'page-jelly', label: 'Jelly', emoji: '🍮', desc: 'Lands and wiggles like jelly' },
+  { name: 'page-flip', label: 'Story Flip', emoji: '📖', desc: '3D page flip — like turning a storybook' },
+  { name: 'page-pop', label: 'Confetti Pop', emoji: '🎉', desc: 'Zoom-in celebration with overshoot' }
+]
+const activeTransition = ref<string>('page-playful')
+const previewKey = ref(0)
+const previewColors = ['#ffd6f0', '#ffe6b3', '#d4f5ff', '#d6ffd6', '#ffd6d6', '#e6d6ff']
+const previewEmojis = ['🐻', '🦊', '🐼', '🦄', '🐰', '🐸', '🐵', '🦁']
+
+function playTransition(name: string) {
+  activeTransition.value = name
+  previewKey.value++
+}
+
 interface Dancer {
   id: number
   emoji: string
@@ -92,6 +118,33 @@ function triggerDance() {
             :key="name"
             class="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs md:text-sm font-mono text-[#6929c4] shadow border border-[#e6d6ff]"
           ) {{ name }}
+
+      section(class="mt-6")
+        div(class="ds-a-card")
+          div(class="ds-a-card-title") Page Transitions
+          p(class="text-xs text-[#6929c4]/70 mb-3") Tap a transition to preview it — built for ages 6-12 ✨
+          div(class="flex flex-wrap gap-2 mb-4")
+            button(
+              v-for="t in pageTransitions"
+              :key="t.name"
+              type="button"
+              @click="playTransition(t.name)"
+              :class="['ds-a-trans-btn', activeTransition === t.name ? 'is-active' : '']"
+            )
+              span(class="text-xl") {{ t.emoji }}
+              span(class="font-extrabold text-xs md:text-sm") {{ t.label }}
+          p(class="text-[11px] text-[#6929c4]/80 mb-3")
+            | {{ pageTransitions.find(t => t.name === activeTransition)?.desc }}
+          div(class="ds-a-trans-stage relative overflow-hidden rounded-3xl")
+            transition(:name="activeTransition" mode="out-in")
+              div(
+                :key="previewKey"
+                class="ds-a-trans-panel absolute inset-0 flex flex-col items-center justify-center gap-2"
+                :style="{ background: 'linear-gradient(160deg, ' + previewColors[previewKey % previewColors.length] + ' 0%, #ffffff 100%)' }"
+              )
+                span(class="text-6xl md:text-7xl") {{ previewEmojis[previewKey % previewEmojis.length] }}
+                span(class="text-sm md:text-base font-black text-[#2a0f55]") Seite {{ previewKey + 1 }}
+                span(class="text-[11px] text-[#6929c4]/70") Tap again to replay
 
       section(class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5")
 
@@ -282,6 +335,43 @@ function triggerDance() {
   margin-top: 10px
   font-size: 11px
   color: #8b6fbf
+
+
+.ds-a-trans-btn
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  padding: 8px 14px
+  border-radius: 999px
+  background-color: #ffffff
+  border: 2px solid #ece0ff
+  color: #2a0f55
+  cursor: pointer
+  transition: transform 160ms ease-out, box-shadow 160ms ease-out, border-color 160ms ease-out
+  -webkit-tap-highlight-color: transparent
+
+  &:hover
+    transform: translateY(-2px)
+    border-color: rgba(126, 58, 242, 0.45)
+    box-shadow: 0 10px 22px -12px rgba(126, 58, 242, 0.45)
+
+  &:active
+    transform: translateY(1px) scale(0.97)
+
+  &.is-active
+    background: linear-gradient(180deg, #9560f4 0%, #7e3af2 100%)
+    color: #ffffff
+    border-color: #6929c4
+    box-shadow: 0 0 0 1px rgba(126, 58, 242, 0.35), 0 14px 30px -12px rgba(126, 58, 242, 0.55)
+
+.ds-a-trans-stage
+  height: 240px
+  background-color: #f6f0ff
+  border: 1.5px dashed #d6c4ff
+  box-shadow: inset 0 2px 6px rgba(61, 22, 118, 0.08)
+
+.ds-a-trans-panel
+  will-change: transform, opacity
 
 .ds-a-dancer
   display: inline-block

@@ -4,6 +4,7 @@ import DesignSystemView from '@/views/DesignSystemView.vue'
 import DesignSystemSView from '@/views/DesignSystemSView.vue'
 import DesignSystemAView from '@/views/DesignSystemAView.vue'
 import AppMainView from '@/views/app/AppMainView.vue'
+import AppAllBooksView from '@/views/app/AppAllBooksView.vue'
 import AppBookSeriesView from '@/views/app/AppBookSeriesView.vue'
 import AppBookDetailView from '@/views/app/AppBookDetailView.vue'
 import AppAwardsView from '@/views/app/AppAwardsView.vue'
@@ -16,6 +17,7 @@ const routes = [
   { path: '/design-system-s', name: 'design-system-s', component: DesignSystemSView },
   { path: '/design-system-a', name: 'design-system-a', component: DesignSystemAView },
   { path: '/app', name: 'app-main', component: AppMainView },
+  { path: '/app/all-books', name: 'app-all-books', component: AppAllBooksView },
   { path: '/app/series/:seriesId', name: 'app-series', component: AppBookSeriesView },
   { path: '/app/book/:bookId', name: 'app-book', component: AppBookDetailView },
   { path: '/app/awards', name: 'app-awards', component: AppAwardsView },

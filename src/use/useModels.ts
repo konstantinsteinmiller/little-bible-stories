@@ -70,7 +70,7 @@ export const BOOKS: Book[] = [
   },
   {
     id: 'fa-2-fig',
-    title: 'The Fig Leaf Code',
+    title: 'fa-2.title',
     author: 'Anton Bernt',
     releaseDate: '2024-04-09',
     shortDescription: 'Two hidden friends and a garden full of secrets.',
@@ -90,7 +90,7 @@ export const BOOKS: Book[] = [
   },
   {
     id: 'fa-3-grape',
-    title: 'The Grape Escape',
+    title: 'fa-3.title',
     author: 'Anton Bernt',
     releaseDate: '2024-05-21',
     shortDescription: 'Noah, a vineyard, and the promise of a rainbow.',
@@ -110,7 +110,7 @@ export const BOOKS: Book[] = [
   },
   {
     id: 'fa-4-pomegranate',
-    title: 'The Pomegranate Pact',
+    title: 'fa-4.title',
     author: 'Anton Bernt',
     releaseDate: '2024-07-04',
     shortDescription: 'Twelve scouts and a fruit too heavy to carry alone.',
@@ -125,40 +125,29 @@ export const BOOKS: Book[] = [
       de: 'https://cdn.example.com/kanaan/audio/de/pomegranate-pact.mp3'
     },
     cover: 'linear-gradient(135deg, #E67E22 0%, #E74C3C 100%)',
-    coverImage: prependBaseUrl
-    ('images/fruit-agents/cover-fruit-agents_800x500.jpeg'),
-    previewImage:
-      prependBaseUrl('images/fruit-agents/preview-fruit-agents_300x550.jpeg')
+    coverImage: prependBaseUrl('images/fruit-agents/cover-fruit-agents_800x500.jpeg'),
+    previewImage: prependBaseUrl('images/fruit-agents/preview-fruit-agents_300x550.jpeg')
   },
   {
     id: 'fa-5-olive',
-    title:
-      'The Olive Branch',
-    author:
-      'Anton Bernt',
-    releaseDate:
-      '2024-09-18',
-    shortDescription:
-      'A small leaf, a long flight, a brand new world.',
-    description:
-      'On her third flight from the ark, the dove returns with a single olive leaf in her beak. This is her story — a tiny adventure with a sky-sized ending.',
+    title: 'fa-5.title',
+    author: 'Anton Bernt',
+    releaseDate: '2024-09-18',
+    shortDescription: 'A small leaf, a long flight, a brand new world.',
+    description: 'On her third flight from the ark, the dove returns with a single olive leaf in her beak. This is her story — a tiny adventure with a sky-sized ending.',
     content: [...repeatPages(16, i => ({
       page: i + 1,
       title: `fa-5.page.${i + 1}.title`,
       text: `fa-5.page.${i + 1}.text`
     } as Page))],
-    audio:
-      {
-        en: 'https://cdn.example.com/kanaan/audio/en/olive-branch.mp3',
-        de:
-          'https://cdn.example.com/kanaan/audio/de/olive-branch.mp3'
-      }
-    ,
+    audio: {
+      en: 'https://cdn.example.com/kanaan/audio/en/olive-branch.mp3',
+      de:
+        'https://cdn.example.com/kanaan/audio/de/olive-branch.mp3'
+    },
     cover: 'linear-gradient(135deg, #1ABC9C 0%, #2ECC71 100%)',
-    coverImage:
-      prependBaseUrl('images/fruit-agents/cover-fruit-agents_800x500.jpeg'),
-    previewImage:
-      prependBaseUrl('images/fruit-agents/preview-fruit-agents_300x550.jpeg')
+    coverImage: prependBaseUrl('images/fruit-agents/cover-fruit-agents_800x500.jpeg'),
+    previewImage: prependBaseUrl('images/fruit-agents/preview-fruit-agents_300x550.jpeg')
   }
 ]
 

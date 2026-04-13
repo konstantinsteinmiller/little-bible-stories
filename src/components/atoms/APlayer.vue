@@ -5,6 +5,7 @@ interface Props {
   progress?: number // 0..1
   label?: string    // overrides default "X% gelesen"
   isDisabled?: boolean
+  movable?: boolean
   seekable?: boolean
 }
 
@@ -12,6 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
   progress: 0,
   label: '',
   isDisabled: false,
+  movable: true,
   seekable: true
 })
 
@@ -32,14 +34,20 @@ const seekFromEvent = (e: PointerEvent) => {
 }
 
 const onDown = (e: PointerEvent) => {
+  if (!props.movable) return
   pressed.value = true
   ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
   seekFromEvent(e)
 }
 const onMove = (e: PointerEvent) => {
+  if (!props.movable) return
   if (pressed.value) seekFromEvent(e)
 }
-const onUp = () => (pressed.value = false)
+const onUp = () => {
+  if (!props.movable) return
+  pressed.value = false
+}
+
 </script>
 
 <template lang="pug">
@@ -62,6 +70,9 @@ const onUp = () => (pressed.value = false)
       )
       span(
         class="a-player-knob absolute top-1/2 -translate-y-1/2 -translate-x-1/2"
+        :class={
+          'not-movable': !movable
+        }
         :style="{ left: (clamped * 100) + '%' }"
       )
 
@@ -83,11 +94,17 @@ const onUp = () => (pressed.value = false)
   &:hover .a-player-knob
     transform: translate(-50%, -50%) scale(1.1)
 
+  &:not(.seekable):hover .a-player-knob
+    transform: translate(0, 0) scale(1)
+
   &.is-pressed
     transform: scaleY(1.08)
 
   &.is-pressed .a-player-knob
     transform: translate(-50%, -50%) scale(0.88)
+
+  &.is-pressed:not(.seekable) .a-player-knob
+    transform: translate(0, 0) scale(1)
 
 .a-player-fill
   border-radius: 999px
@@ -106,4 +123,15 @@ const onUp = () => (pressed.value = false)
 
 .a-player-label
   color: #8b6fbf
+
+@media (max-width: 400px)
+  .a-player-track
+    height: 10px
+  .a-player-knob
+    width: 16px
+    height: 16px
+    border-width: 1.5px
+  .a-player-label
+    font-size: 10px
+    margin-top: 4px
 </style>

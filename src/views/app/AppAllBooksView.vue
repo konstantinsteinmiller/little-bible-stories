@@ -10,13 +10,17 @@ import ABottomNav from '@/components/atoms/ABottomNav.vue'
 import useModels from '@/use/useModels'
 
 const { t } = useI18n({ useScope: 'global' })
-const route = useRoute()
 const router = useRouter()
-const { getSeries, getBooksOfSeries } = useModels()
+const route = useRoute()
+const { BOOKS, getSeriesOfBook } = useModels()
 
-const seriesId = computed(() => String(route.params.seriesId))
-const series = computed(() => getSeries(seriesId.value))
-const books = computed(() => getBooksOfSeries(seriesId.value))
+function routeToNav(name: string): string {
+  if (name === 'app-main') return 'home'
+  if (name === 'app-all-books' || name === 'app-book' || name === 'app-book-series') return 'series'
+  if (name === 'app-awards') return 'brush'
+  if (name === 'app-profile') return 'profile'
+  return 'home'
+}
 
 const navItems = computed(() => [
   { id: 'home', label: t('app.nav.home'), icon: 'home' as const },
@@ -24,14 +28,7 @@ const navItems = computed(() => [
   { id: 'brush', label: t('app.nav.color'), icon: 'brush' as const },
   { id: 'profile', label: t('app.nav.profile'), icon: 'profile' as const }
 ])
-const activeNav = computed<string | number>(() => {
-  const name = String(route.name || '')
-  if (name === 'app-main') return 'home'
-  if (name === 'app-all-books' || name === 'app-book' || name === 'app-book-series') return 'series'
-  if (name === 'app-awards') return 'brush'
-  if (name === 'app-profile') return 'profile'
-  return 'home'
-})
+const activeNav = computed<string | number>(() => routeToNav(String(route.name || '')))
 
 function onNav(id: string | number) {
   if (id === 'home') router.push({ name: 'app-main' })
@@ -44,31 +41,45 @@ function openBook(bookId: string) {
   router.push({ name: 'app-book', params: { bookId } })
 }
 
-function isNew(iso: string) {
-  return Date.now() - new Date(iso).getTime() < 1000 * 60 * 60 * 24 * 90
+const allBooks = computed(() => {
+  return [...BOOKS].sort((a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime())
+})
+
+function isNew(isoDate: string) {
+  const released = new Date(isoDate).getTime()
+  return Date.now() - released < 1000 * 60 * 60 * 24 * 90
+}
+
+function tagsForBook(b: typeof BOOKS[number]) {
+  const series = getSeriesOfBook(b.id)
+  const base = ['5 min', 'Alter 4-8']
+  if (series) base.push(series.name)
+  return base
 }
 </script>
 
 <template lang="pug">
   div(class="app-page min-h-screen w-full")
     AHeader(
-      :greeting="t('app.bookSeries.title')"
-      :title="series?.name || '—'"
-      :show-action="false"
+      :greeting="t('app.allBooks.hello')"
+      :title="t('app.allBooks.title')"
+      :action-label="t('app.allBooks.unlock')"
+      @action="() => {}"
     )
 
-    section(v-if="series" class="section-wrap mt-6")
-      ABreadcrumbs(:label="t('app.bookSeries.overview')")
-      p(class="series-desc mt-2") {{ series.description }}
-
     section(class="section-wrap mt-6")
-      div(class="flex flex-col gap-3")
+      ABreadcrumbs(:label="t('app.allBooks.allStories')")
+      div(class="flex items-center justify-between gap-3 mt-2")
+        h2(class="releases-title text-xl md:text-2xl font-black") {{ t('app.allBooks.newReleases') }}
+        span(class="count-pill") {{ allBooks.length }}
+
+      div(class="mt-3 flex flex-col gap-3")
         ACard(
-          v-for="(book, idx) in books"
+          v-for="book in allBooks"
           :key="book.id"
           :title="t(book.title)"
-          :category="`#${idx + 1}`"
-          :tags="['5 min', 'Alter 4-8']"
+          :category="getSeriesOfBook(book.id)?.name || book.author"
+          :tags="tagsForBook(book)"
           @click="openBook(book.id)"
         )
           template(#image)
@@ -78,17 +89,18 @@ function isNew(iso: string) {
                 :style="{ background: book.cover || 'linear-gradient(135deg,#9560f4,#7e3af2)' }"
               )
               img(
-                v-if="book.previewImage || book.coverImage"
-                :src="book.previewImage || book.coverImage"
+                v-if="book.coverImage || book.previewImage"
+                :src="book.coverImage || book.previewImage"
                 :alt="t(book.title)"
                 class="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               )
-              ABadge(
+              ABadge.new-badge(
                 v-if="isNew(book.releaseDate)"
                 variant="new"
                 position="top-left"
                 label="NEU"
+                size="sm"
               )
 
     div(class="h-32")
@@ -107,8 +119,22 @@ function isNew(iso: string) {
   padding-left: 20px
   padding-right: 20px
 
-.series-desc
-  color: var(--color-text-secondary)
-  line-height: 1.55
+.releases-title
+  color: var(--color-text-primary)
+
+.count-pill
+  display: inline-block
+  font-size: 11px
+  font-weight: 800
+  letter-spacing: 0.1em
+  text-transform: uppercase
+  color: var(--color-text-link)
+  background-color: var(--color-bg-active-pill)
+  padding: 6px 12px
+  border-radius: 999px
+
+.a-card a-badge.new-badge:deep(.a-badge-top-left)
+  top: 2px !important
+  left: 5px
 </style>
 

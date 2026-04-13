@@ -1,158 +1,200 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
-import SCard from '@/components/atoms/SCard.vue'
-import SBottomNav from '@/components/atoms/SBottomNav.vue'
+import { useRoute, useRouter } from 'vue-router'
+import AHeader from '@/components/atoms/AHeader.vue'
+import ACard from '@/components/atoms/ACard.vue'
+import ABadge from '@/components/atoms/ABadge.vue'
+import AChip from '@/components/atoms/AChip.vue'
+import APlayer from '@/components/atoms/APlayer.vue'
+import APlayButton from '@/components/atoms/APlayButton.vue'
+import ABreadcrumbs from '@/components/atoms/ABreadcrumbs.vue'
+import ABottomNav from '@/components/atoms/ABottomNav.vue'
 import useModels from '@/use/useModels'
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const router = useRouter()
-const { BOOK_SERIES, getBooksOfSeries, getSeriesOfBook, lastReadBook } = useModels()
+const route = useRoute()
+const { BOOKS, getSeriesOfBook, lastReadBook } = useModels()
 
-const navItems = [
-  { id: 'home', label: '', icon: 'home' as const },
-  { id: 'awards', label: '', icon: 'awards' as const },
-  { id: 'profile', label: '', icon: 'profile' as const }
-]
-const activeNav = computed({
-  get: () => 'home',
-  set: (id: string) => onNav(id)
-})
+const navItems = computed(() => [
+  { id: 'home', label: t('app.nav.home'), icon: 'home' as const },
+  { id: 'series', label: t('app.nav.series'), icon: 'series' as const },
+  { id: 'brush', label: t('app.nav.color'), icon: 'brush' as const },
+  { id: 'profile', label: t('app.nav.profile'), icon: 'profile' as const }
+])
 
-function onNav(id: string) {
-  if (id === 'home') router.push({ name: 'app-main' })
-  if (id === 'awards') router.push({ name: 'app-awards' })
-  if (id === 'profile') router.push({ name: 'app-profile' })
+const activeNav = computed<string | number>(() => routeToNav(String(route.name || '')))
+
+function routeToNav(name: string): string {
+  if (name === 'app-main') return 'home'
+  if (name === 'app-all-books' || name === 'app-book' || name === 'app-book-series') return 'series'
+  if (name === 'app-awards') return 'brush'
+  if (name === 'app-profile') return 'profile'
+  return 'home'
 }
 
-function openSeries(seriesId: string) {
-  router.push({ name: 'app-series', params: { seriesId } })
+function onNav(id: string | number) {
+  if (id === 'home') router.push({ name: 'app-main' })
+  if (id === 'series') router.push({ name: 'app-all-books' })
+  if (id === 'profile') router.push({ name: 'app-profile' })
+  if (id === 'brush') router.push({ name: 'app-awards' })
 }
 
 function openBook(bookId: string) {
   router.push({ name: 'app-book', params: { bookId } })
 }
 
+function openAll() {
+  router.push({ name: 'app-all-books' })
+}
+
 const lastReadSeries = computed(() => {
   if (!lastReadBook.value) return null
   return getSeriesOfBook(lastReadBook.value.id) ?? null
 })
+
+const continueProgress = ref(0.42)
+
+const newReleases = computed(() => {
+  return [...BOOKS]
+    .sort((a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime())
+    .slice(0, 6)
+})
+
+function isNew(isoDate: string) {
+  const released = new Date(isoDate).getTime()
+  const now = Date.now()
+  return now - released < 1000 * 60 * 60 * 24 * 90 // within 90 days
+}
+
+function tagsForBook(b: typeof BOOKS[number]) {
+  const series = getSeriesOfBook(b.id)
+  const base = ['5 min', 'Alter 4-8']
+  if (series) base.push(series.name)
+  return base
+}
 </script>
 
 <template lang="pug">
   div(class="app-page min-h-screen w-full")
-    //- Header (respects safe area top)
-    header(class="px-5 pb-2 pt-[max(env(safe-area-inset-top),1.25rem)]")
-      div(class="max-w-2xl mx-auto")
-        p(class="text-xs md:text-sm font-bold uppercase tracking-wider text-white/75") {{ t('welcome') }}
-        h1(class="text-2xl md:text-3xl font-black text-white") {{ t('appTitle') }}
+    AHeader(
+      :greeting="t('app.main.hello')"
+      :title="t('app.main.home')"
+      :action-label="t('app.main.unlock')"
+      @action="() => {}"
+    )
 
-    //- Last read
+    //- Continue listening
     section(
       v-if="lastReadBook"
-      class="px-5 mt-4"
+      class="section-wrap mt-6"
     )
-      div(class="max-w-2xl mx-auto")
-        h2(class="mb-2 text-[11px] md:text-xs font-black uppercase tracking-wider text-white/85") {{ t('lastRead') }}
+      ABreadcrumbs(:label="t('app.main.continueListening')")
+      div(class="mt-2 px-2")
+        ACard(
+          :title="t(lastReadBook.title)"
+          :category="t(lastReadSeries?.name) || t('app.main.continueReading')"
+          @click="openBook(lastReadBook.id)"
+        )
+          template(#image)
+            div(class="relative w-full h-full")
+              div(
+                class="absolute inset-0"
+                :style="{ background: lastReadBook.cover || 'linear-gradient(135deg,#9560f4,#7e3af2)' }"
+              )
+              img(
+                v-if="lastReadBook.coverImage || lastReadBook.previewImage"
+                :src="lastReadBook.coverImage || lastReadBook.previewImage"
+                :alt="lastReadBook.title"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              )
+          template(#badge)
+            ABadge.new-badge(
+              v-if="isNew(lastReadBook.releaseDate)"
+              variant="new"
+              position="top-left"
+              label="NEU"
+              size="sm"
+            )
+          div(class="flex items-center gap-2 mt-1.5 w-full")
+            div(class="flex-1 min-w-0")
+              APlayer(:progress="continueProgress" :seekable="false" @seek="(v) => continueProgress = v")
+            div(class="shrink-0" @click.stop)
+              APlayButton(size="sm" @click="openBook(lastReadBook.id)")
+
+    //- New releases
+    section(class="section-wrap mt-8")
+      div(class="flex items-center justify-between gap-3")
+        h2(class="releases-title text-xl md:text-2xl font-black") {{ t('app.main.newReleases') }}
         button(
           type="button"
-          @click="openBook(lastReadBook.id)"
-          class="last-read-card w-full text-left flex items-center gap-3 rounded-2xl bg-white/95 px-3 py-3 shadow-md hover:scale-[101%] active:scale-[99%] transition-transform"
+          class="all-link inline-flex items-center gap-1 text-sm md:text-base font-bold"
+          @click="openAll"
         )
-          div(
-            class="last-read-cover relative shrink-0 w-16 h-20 rounded-xl overflow-hidden"
-            :style="{ background: lastReadBook.cover || 'linear-gradient(135deg,#E67E22,#F1C40F)' }"
-          )
-            img(
-              v-if="lastReadBook.previewImage || lastReadBook.coverImage"
-              :src="lastReadBook.previewImage || lastReadBook.coverImage"
-              :alt="t(lastReadBook.title)"
-              class="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            )
-          div(class="flex-1 min-w-0")
-            p(class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#E67E22] truncate") {{ lastReadSeries?.name || t('continueReading') }}
-            p(class="text-base md:text-lg font-black text-[#2C3E50] truncate") {{ t(lastReadBook.title) }}
-            p(class="text-xs text-[#7F8C8D] truncate") {{ lastReadBook.author }}
-          div(class="shrink-0 w-9 h-9 rounded-full bg-[#E67E22] text-white flex items-center justify-center")
-            svg(viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 translate-x-[1px]")
-              path(d="M8 5v14l11-7z")
+          | {{ t('app.main.seeAll') }}
+          svg(viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4")
+            path(d="m9 6 6 6-6 6")
 
-    //- Series sections
-    section(class="px-5 mt-6")
-      div(class="max-w-2xl mx-auto flex flex-col gap-7")
-        div(
-          v-for="series in BOOK_SERIES"
-          :key="series.id"
+      div(class="mt-3 flex flex-col gap-3")
+        ACard(
+          v-for="book in newReleases"
+          :key="book.id"
+          :title="t(book.title)"
+          :category="getSeriesOfBook(book.id)?.name || book.author"
+          :tags="tagsForBook(book)"
+          @click="openBook(book.id)"
         )
-          //- Series header (clickable to open series detail)
-          button(
-            type="button"
-            @click="openSeries(series.id)"
-            class="w-full flex items-center justify-between mb-2 group"
-          )
-            div(class="text-left")
-              p(class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-white/70") {{ t('bookSeries') }}
-              h2(class="text-xl md:text-2xl font-black text-white group-hover:text-[#F1C40F] transition-colors") {{ series.name }}
-            span(class="text-white/80 text-sm font-bold flex items-center gap-1")
-              | {{ t('seeAll') }}
-              svg(viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4")
-                path(d="m9 6 6 6-6 6")
-
-          //- Horizontal scroll of books
-          div(class="-mx-5 px-5 overflow-x-auto pb-1 scrollbar-hide")
-            div(class="flex gap-3")
-              SCard(
-                v-for="book in getBooksOfSeries(series.id)"
-                :key="book.id"
-                :title="t(book.title)"
-                :subtext="book.author"
-                class="w-[160px] md:w-[180px] shrink-0"
-                @click="openBook(book.id)"
+          template(#image)
+            div(class="relative w-full h-full")
+              div(
+                class="absolute inset-0"
+                :style="{ background: book.cover || 'linear-gradient(135deg,#9560f4,#7e3af2)' }"
               )
-                template(#image)
-                  div(
-                    class="absolute inset-0"
-                    :style="{ background: book.cover || 'linear-gradient(135deg,#3498DB,#9B59B6)' }"
-                  )
-                  img(
-                    v-if="book.previewImage || book.coverImage"
-                    :src="book.previewImage || book.coverImage"
-                    :alt="t(book.title)"
-                    class="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  )
+              img(
+                v-if="book.coverImage || book.previewImage"
+                :src="book.coverImage || book.previewImage"
+                :alt="t(book.title)"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              )
+              ABadge.new-badge(
+                variant="new"
+                position="top-left"
+                label="NEU"
+                size="sm"
+              )
 
-    //- spacer for fixed bottom nav
     div(class="h-32")
-
-    SBottomNav(:model-value="activeNav" :items="navItems" accent="orange" @update:model-value="onNav")
+    ABottomNav(:items="navItems" :model-value="activeNav" @update:model-value="onNav")
 </template>
 
 <style scoped lang="sass">
 .app-page
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(241, 196, 15, 0.35), transparent 60%), linear-gradient(180deg, #3498DB 0%, #1F6FA8 100%)
+  background-color: var(--color-bg-main)
+  color: var(--color-text-primary)
 
-.scrollbar-hide
-  &::-webkit-scrollbar
-    display: none
-  scrollbar-width: none
+.section-wrap
+  max-width: 42rem
+  margin-left: auto
+  margin-right: auto
+  padding-left: 20px
+  padding-right: 20px
+
+.releases-title
+  color: var(--color-text-primary)
+
+.all-link
+  color: var(--color-text-link)
+  -webkit-tap-highlight-color: transparent
+
+  &:hover
+    transform: translateX(2px)
+    transition: transform 180ms ease-out
+
+:deep(.new-badge.a-badge-top-left)
+  top: 4px !important
+  left: 4px
 </style>
 
-<i18n>
-en:
-  appTitle: "Little Bible Stories"
-  welcome: "Welcome back"
-  lastRead: "Continue listening"
-  continueReading: "Continue reading"
-  bookSeries: "Book series"
-  seeAll: "See all"
-de:
-  appTitle: "Kanaan Geschichten"
-  welcome: "Willkommen zurück"
-  lastRead: "Weiterhören"
-  continueReading: "Weiterlesen"
-  bookSeries: "Buchreihe"
-  seeAll: "Alle ansehen"
-</i18n>

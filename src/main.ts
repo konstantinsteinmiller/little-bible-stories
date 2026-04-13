@@ -6,12 +6,16 @@ import '@/assets/css/index.sass'
 import { createI18n } from 'vue-i18n'
 import baseTranslations from '@/i18n/translations'
 import bookTranslations from '@/i18n/books'
+import appTranslations from '@/i18n/app'
 import { mergeObjectsRecursive } from '@/utils/function'
 import { GAME_USER_LANGUAGE } from '@/utils/constants.ts'
 
 const translations = mergeObjectsRecursive(
-  mergeObjectsRecursive({}, bookTranslations),
-  baseTranslations
+  mergeObjectsRecursive(
+    mergeObjectsRecursive({}, bookTranslations),
+    baseTranslations
+  ),
+  appTranslations
 )
 
 const userLanguage = ref(sessionStorage.getItem(GAME_USER_LANGUAGE) || navigator.language?.split('-')[0])

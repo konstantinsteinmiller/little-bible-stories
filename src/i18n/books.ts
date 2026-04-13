@@ -1,7 +1,7 @@
 export default {
   en: {
     'fa-1': {
-      title: 'Mission Peace',
+      title: 'Volume 1: Mission Peace',
       page: {
         1: {
           title: 'The Hottest Street in Town',
@@ -68,11 +68,27 @@ export default {
           text: ''
         }
       }
+    },
+    'fa-2': {
+      title: 'Volume 2: The Fig Leaf Code',
+      page: {}
+    },
+    'fa-3': {
+      title: 'Volume 3: The Grape Escape',
+      page: {}
+    },
+    'fa-4': {
+      title: 'Volume 4: The Pomegranate Pact',
+      page: {}
+    },
+    'fa-5': {
+      title: 'Volume 5: The Olive Branch',
+      page: {}
     }
   },
   de: {
     'fa-1': {
-      title: 'Mission Friede',
+      title: 'Band 1: Mission Friede',
       page: {
         1: {
           title: 'Die heißeste Straße der Stadt',
@@ -695,6 +711,22 @@ export default {
             'Dein Anton'
         }
       }
+    },
+    'fa-2': {
+      title: 'Band 2: Der Limonadenstand',
+      page: {}
+    },
+    'fa-3': {
+      title: 'Band 3: Die große Flucht',
+      page: {}
+    },
+    'fa-4': {
+      title: 'Band 4: Der Granantapfelpakt',
+      page: {}
+    },
+    'fa-5': {
+      title: 'Band 5: Der Olivenzweig',
+      page: {}
     }
   }
 }
